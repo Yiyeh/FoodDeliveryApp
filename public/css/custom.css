@@ -1,0 +1,24 @@
+.jumbotron {
+	height: 600px;
+    margin-bottom: 0px;
+    background-image: url(http://betheme.muffingroupsc.netdna-cdn.com/be/bistro/wp-content/uploads/2016/04/home_bistro_slider.jpg);
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
+}
+
+body{
+	background-color: #fdfdf9;
+}
+
+.card-columns {
+  @include media-breakpoint-only(lg) {
+    column-count: 1;
+  }
+  @include media-breakpoint-only(xl) {
+    column-count: 2;
+  }
+}
+
