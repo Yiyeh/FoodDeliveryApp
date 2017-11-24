@@ -19,3 +19,8 @@ Route::resource('users' , 'UserController');
 Route::resource('delivery' , 'FoodPlaceController');
 Route::resource('categorias' , 'CategoryController');
 Route::resource('order' , 'OrderController');
+
+
+Route::prefix('admin')->group(function () {  
+	Route::resource('delivery' , 'admin\FoodPlaceAdminController');
+});

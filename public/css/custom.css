@@ -1,3 +1,11 @@
+
+.page-header {
+    @extend .mb-4;
+    @extend .mt-5;
+    @extend .pb-2;
+    border-bottom: 1px solid $gray-200;
+}
+
 .jumbotron {
 	height: 600px;
     margin-bottom: 0px;
