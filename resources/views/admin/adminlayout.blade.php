@@ -12,8 +12,17 @@
 </head>
 <body>
 
+<div class="container">
+
+			<div class="row">
+				<div class="col-sm-12">
+					<br>
+					<h1 class="display-4 text-center">Admin Panel</h1>
+				</div>
+			</div>
+
 	
-		
+</div>		
 			
 			@yield('content')
 
