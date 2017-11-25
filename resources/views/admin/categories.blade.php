@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="col-sm-11">
-	<a href="#" class="btn  btn-primary float-right">New Category</a>
+	<a href="#" class="btn  btn-primary pull-right">New Category</a>
 	<table class="table table-striped table-sm">
 		<thead>
 			<tr></tr>

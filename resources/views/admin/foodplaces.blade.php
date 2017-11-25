@@ -5,8 +5,8 @@
 @section('content')
 
 <div class="col-sm-11">
-	<a href="#" class="btn  btn-primary float-right">New Foodplace</a>
-	<table class="table table-striped table-sm">
+	<a href="#" class="btn  btn-primary pull-right">New Foodplace</a>
+	<table class="table  table-responsive table-striped table-sm">
 		<thead>
 			<tr></tr>
 				<th>ID</th>

@@ -18,32 +18,30 @@
 
 			<!-- div lateral Categorias -->
 			<div class="col-sm-3">
-				<div class="card">
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item"><h4>Categorias</h4></li>	
-						@foreach ($categories as $category)
-					    	<li class="list-group-item"> 
-					    		<div class="col-sm-12">
-					    			<a href="{{$category->name}}">{{$category->name}}</a>
-					    		</div>	    		
-					    	</li>	
-						@endforeach
-					</ul>
+
+				<div class="panel panel-default">
+				  	<div class="panel-heading">
+				    	<h3 class="panel-title">Categorias</h3>
+				  	</div>
+				  	<div class="panel-body">
+				  	@foreach ($categories as $category)
+				    	<a href="{{$category->name}}">{{$category->name}}</a><br>
+				    @endforeach
+				  	</div>
 				</div>
 
-				<br>
-
-				<!-- div lateral Ciudades -->				
-				<li class="list-group-item"><h4>Ciudades</h4></li>
-				@foreach ($cities as $city)
-			    	<li class="list-group-item"> 
-			    		<div class="col-sm-12">
-			    			<a href="l/{{$city->city}}">{{$city->city}}</a>
-			    		</div>	    		
-			    	</li>	
-				@endforeach
+				<div class="panel panel-default">
+				  	<div class="panel-heading">
+				    	<h3 class="panel-title">Ciudades</h3>
+				  	</div>
+				  	<div class="panel-body">
+				  	@foreach ($cities as $city)
+				    	<a href="l/{{$city->city}}">{{$city->city}}</a><br>
+				    @endforeach
+				  	</div>
+				</div>		
+				
 			</div>
-
 
 			<!-- div central -->
 
@@ -51,32 +49,30 @@
 			
 			<div class="col-sm-9">
 				
-				
-
-
-				<div class="card" >
-				  <ul class="list-group list-group-flush">
-				    @foreach ($deliveries as $delivery)
-				    
-				    	<li class="list-group-item">	
-				    		<div class="col-sm-4">
-				    		<img class="img-thumbnail" src="{{ $delivery->logo }}" width="95%"></div>
-				    		<div class="col-sm-4">
-				    		<span><h5>{{ $delivery->name }}</h5> {{ $delivery->short }} </span></div>
-							<div class="col-sm-4">
-				    		<span> {{ $delivery->sector }} <br> {{ $delivery->city }} <br> 
-				    			<small class="text-muted">{{ $delivery->phone}}</small></span></div>
-							<div class="col-sm-12">
-								<br>
-								<center><a href="delivery/{{$delivery->id}}" class="btn btn-sm btn-primary float-right" >Ver Delivery</a></center>
-							</div>	
-					    </li>
-					@endforeach
-				  </ul>
-				  <div class="pagination pagination-lg">{!! $deliveries->render() !!}</div>
+				@foreach ($deliveries as $delivery)
+				<div class="panel panel-default">
+				 
+				  	<div class="panel-heading">
+				    	<h3 class="panel-title">{{ $delivery->name }}</h3>
+				  	</div>
+				  	<div class="panel-body">
+				    	<div class="col-sm-4">
+			    			<img class="img-thumbnail" src="{{ $delivery->logo }}" width="95%">
+			    		</div>
+			    		<div class="col-sm-4">
+			    			<span>{{ $delivery->short }} </span>
+			    		</div>
+						<div class="col-sm-4">
+			    		<span> {{ $delivery->sector }} <br> {{ $delivery->city }} <br> 
+			    			<small class="text-muted">{{ $delivery->phone}}</small>
+			    		</span>
+			    			<a href="delivery/{{$delivery->id}}" class="btn btn-sm btn-primary pull-right" >Ver Delivery</a>
+			    		</div>			
+				  	</div>			
 				</div>
-
-
+				@endforeach
+					  <div class="pagination pagination-lg">{!! $deliveries->render() !!}</div>
+	
 			</div> <!-- col-sm-9 -->
 		</div><!-- row -->
 	</div>

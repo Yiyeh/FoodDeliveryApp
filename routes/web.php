@@ -22,8 +22,11 @@ Route::resource('orders' , 'OrderController');
 
 
 Route::prefix('admin')->group(function () {  
-	Route::resource('delivery' , 'admin\FoodPlaceAdminController');
+	Route::resource('deliveries' , 'admin\FoodPlaceAdminController');
 	Route::resource('categories' , 'admin\CategoryAdminController');
 	Route::resource('users' , 'admin\UserAdminController');
 	Route::resource('orders' , 'admin\OrderAdminController');
+	Route::get('/', function () {
+    return view('admin.layout');
+});
 });
