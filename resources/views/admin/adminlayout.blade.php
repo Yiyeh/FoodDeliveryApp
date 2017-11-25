@@ -12,20 +12,33 @@
 </head>
 <body>
 
+	<!--
+	<div class="row">
+	  	<div class="col-sm-1 sidenav">
+	  		<br><br><br>
+	    	<ul class="nav flex-column">
+	    		<center>
+		      		<li class="nav-item">
+		    			<a class="nav-link active" href="#">Active</a>
+		      		</li>
+		      		<li class="nav-item">
+		        		<a class="nav-link" href="#">Link</a>
+		      		</li>
+		      		<li class="nav-item">
+		        		<a class="nav-link" href="#">Link</a>
+		      		</li>
+		      		<li classa="nav-item">
+		        		<a class="nav-link disabled" href="#">Disabled</a>
+		      		</li>
+	      		</center>
+	    	</ul>
+	  	</div>
 
+	  -->
 
+		@yield('content')
 
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12">
-				<br>
-				<h1 class="display-4 text-center">Admin Panel</h1>
-			</div>
-		</div>
-	</div>	
-
-	@yield('nav')
-	@yield('content')
+	</div> <!-- Cierre del row -->
 
 	<script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
