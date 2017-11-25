@@ -12,23 +12,20 @@
 </head>
 <body>
 
-<div class="container">
 
-			<div class="row">
-				<div class="col-sm-12">
-					<br>
-					<h1 class="display-4 text-center">Admin Panel</h1>
-				</div>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<br>
+				<h1 class="display-4 text-center">Admin Panel</h1>
 			</div>
+		</div>
+	</div>	
 
-	
-</div>		
-			
-			@yield('content')
-
-	
-
-
+	@yield('nav')
+	@yield('content')
 
 	<script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>

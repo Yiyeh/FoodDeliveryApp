@@ -1,10 +1,34 @@
-@extends('.admin.adminlayout')
+@extends('admin.adminlayout')
 
 @section('title','Categories List')
 
+
+
+
+@section('nav')
+	<div class="row">
+	  <div class="col-sm-1">
+	    <ul class="nav flex-column">
+	      <li class="nav-item">
+	        <a class="nav-link active" href="#">Active</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">Link</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">Link</a>
+	      </li>
+	      <li classa="nav-item">
+	        <a class="nav-link disabled" href="#">Disabled</a>
+	      </li>
+	    </ul>
+	  </div>
+@endsection
+
+
 @section('content')
 
-<div class="col-sm-12">
+<div class="col-sm-11">
 	<a href="#" class="btn  btn-primary float-right">New Category</a>
 	<table class="table table-striped table-sm">
 		<thead>
@@ -29,10 +53,13 @@
 					</td>
 				</tr>
 		
-	@endforeach
+			@endforeach
 		</tbody>
 	</table>
 
 	{!! $categories->render() !!}
 </div>			
 @endsection
+
+
+</div>
