@@ -62,6 +62,7 @@ $factory->define(App\Order::class, function (Faker\Generator $faker) {
         'body' 		=> $faker->realText($maxNbChars = 150, $indexSize = 2),  
         'phone'		=> $faker->e164PhoneNumber,
         'address' 	=> $faker->streetAddress,
+        'ready' => $faker->boolean($chanceOfGettingTrue = 50),
 
     ];
 });

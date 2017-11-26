@@ -22,6 +22,7 @@ class CreateOrdersTable extends Migration
             $table->text('body');
             $table->text('phone');
             $table->text('address');
+            $table->boolean('ready');
             $table->timestamps();
 
             $table->foreign('user_id')

@@ -15,6 +15,7 @@
 				<th>Body</th>
 				<th>Phone</th>
 				<th>Address</th>
+				<th>Estado</th>
 				<th colspan="3">Opciones</th>
 			</tr>
 		</thead>
@@ -23,10 +24,11 @@
 			<tr>
 				<td>{{$order->id}}</td>
 				<td>{{$order->user_id}}</td>
-				<td>{{$order->foodplace_id}}</td>
+				<td>{{$order->foodPlace_id}}</td>
 				<td>{{$order->body}}</td>
 				<td>{{$order->phone}}</td>
 				<td>{{$order->address}}</td>
+				<td>{{$order->ready}}</td>
 				<td>
 					<a href="{{ route('orders.show', $order->id) }}" class="btn  btn-primary">View</a>
 				</td>
