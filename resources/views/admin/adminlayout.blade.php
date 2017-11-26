@@ -23,6 +23,9 @@
 				  	</div>
 				  	<div class="panel-body">
 				  	<ul class="nav navbar-nav">
+				  		<li class="nav-item">
+			    			<a class="nav-link" href="/">View Site</a>
+			      		</li>
 					  	<li class="nav-item">
 			    			<a class="nav-link" href="{{ route('users.index') }}">Users</a>
 			      		</li>
@@ -34,6 +37,12 @@
 			      		</li>
 			      		<li class="nav-item">
 			        		<a class="nav-link" href="{{ route('orders.index') }}">Orders</a>
+			      		</li>
+			      		<li class="nav-item">
+			        		<a class="nav-link" href="{{ route('comments.index') }}">Comments</a>
+			      		</li>
+			      		<li class="nav-item">
+			        		<a class="nav-link" href="{{ route('fanpages.index') }}">Fan Pages</a>
 			      		</li>
 		      		</ul>
 				  	</div>

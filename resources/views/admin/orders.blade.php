@@ -24,7 +24,7 @@
 			<tr>
 				<td>{{$order->id}}</td>
 				<td>{{$order->user_id}}</td>
-				<td>{{$order->foodPlace_id}}</td>
+				<td>{{$order->foodplace_id}}</td>
 				<td>{{$order->body}}</td>
 				<td>{{$order->phone}}</td>
 				<td>{{$order->address}}</td>

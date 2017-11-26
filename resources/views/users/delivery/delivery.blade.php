@@ -71,7 +71,7 @@
 				  	</div>			
 				</div>
 				@endforeach
-					  <div class="pagination pagination-lg">{!! $deliveries->render() !!}</div>
+				{!! $deliveries->render() !!}
 	
 			</div> <!-- col-sm-9 -->
 		</div><!-- row -->

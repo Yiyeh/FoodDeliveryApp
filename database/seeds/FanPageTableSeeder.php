@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\FoodPlace;
+use App\FanPage;
 
-class FoodPlaceTableSeeder extends Seeder
+class FanPageTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +12,6 @@ class FoodPlaceTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(FoodPlace::class, 100) ->create();
+        factory(FanPage::class, 10) ->create();
     }
 }

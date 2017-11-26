@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\FoodPlace;
-use App\Category;
+use App\Http\Controllers\Controller;
 use App\Comment;
 
-class FoodPlaceController extends Controller
+class CommentAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,11 +15,8 @@ class FoodPlaceController extends Controller
      */
     public function index()
     {
-        $deliveries = FoodPlace::orderBy('id','DESC')->paginate();
-        $categories = Category::get();
-        $cities = DB::table('food_places')->distinct()->select('city')->get();
-
-        return view('users.delivery.delivery', compact('deliveries','categories','cities'));
+        $comments = Comment::orderBy('id','DESC')->paginate();
+        return view('admin.comments', compact('comments'));
     }
 
     /**
@@ -53,13 +48,7 @@ class FoodPlaceController extends Controller
      */
     public function show($id)
     {
-        $delivery   = FoodPlace::findOrFail($id);
-        $comments   = DB::table('comments')->where('foodplace_id', '=', $id)->get();
-        $categories = Category::get();
-        $cities = DB::table('food_places')->distinct()->select('city')->get();
-
-
-        return view('users.delivery.deliveryProfile', compact('delivery','categories', 'comments','cities'));
+        //
     }
 
     /**

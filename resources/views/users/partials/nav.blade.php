@@ -26,6 +26,10 @@
         <li class="nav-item">
           <a class="nav-link" href="/premium">Premium</a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/admin/deliveries">Administracion</a>
+        </li>
         
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorias <span class="caret"></span></a>

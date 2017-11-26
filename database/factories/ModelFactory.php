@@ -57,12 +57,32 @@ $factory->define(App\FoodPlace::class, function (Faker\Generator $faker) {
 $factory->define(App\Order::class, function (Faker\Generator $faker) {
 
     return [
-    	'user_id'	=> $faker->numberBetween($min = 1, $max = 10),
+    	'user_id'	     => $faker->numberBetween($min = 1, $max = 10),
         'foodPlace_id'   => $faker->numberBetween($min = 1, $max = 10),
-        'body' 		=> $faker->realText($maxNbChars = 150, $indexSize = 2),  
-        'phone'		=> $faker->e164PhoneNumber,
-        'address' 	=> $faker->streetAddress,
-        'ready' => $faker->boolean($chanceOfGettingTrue = 50),
+        'body' 		     => $faker->realText($maxNbChars = 150, $indexSize = 2),  
+        'phone'		     => $faker->e164PhoneNumber,
+        'address' 	     => $faker->streetAddress,
+        'ready'          => $faker->boolean($chanceOfGettingTrue = 50),
+
+    ];
+});
+
+$factory->define(App\Comment::class, function (Faker\Generator $faker) {
+
+    return [
+        'user_id'        => $faker->numberBetween($min = 1, $max = 30),
+        'foodPlace_id'   => $faker->numberBetween($min = 1, $max = 50),
+        'comment'        => $faker->realText($maxNbChars = 150, $indexSize = 2),  
+        'score'          => $faker->numberBetween($min = 1, $max = 5),
+    ];
+});
+
+$factory->define(App\FanPage::class, function (Faker\Generator $faker) {
+
+    return [
+        'user_id'       => $faker->numberBetween($min = 1, $max = 10),
+        'foodPlace_id'  => $faker->numberBetween($min = 1, $max = 10),
+        'url'           => "http://Facebook.com/nowaycl",  
 
     ];
 });

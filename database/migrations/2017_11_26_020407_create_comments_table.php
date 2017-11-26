@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFanpagesTable extends Migration
+class CreateCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateFanpagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('fanpages', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('foodplace_id')->unsigned();
-            $table->string('url');
+            $table->string('comment');
+            $table->integer('score');
             $table->timestamps();
+
 
             $table->foreign('user_id')
                     ->references('id')->on('users')
@@ -36,6 +38,6 @@ class CreateFanpagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fanpages');
+        Schema::dropIfExists('comments');
     }
 }

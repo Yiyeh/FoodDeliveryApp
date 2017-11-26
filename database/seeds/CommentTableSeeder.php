@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\FoodPlace;
+use App\Comment;
 
-class FoodPlaceTableSeeder extends Seeder
+class CommentTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +12,6 @@ class FoodPlaceTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(FoodPlace::class, 100) ->create();
+        factory(Comment::class, 60) ->create();
     }
 }

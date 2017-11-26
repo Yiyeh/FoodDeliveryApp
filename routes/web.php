@@ -26,5 +26,7 @@ Route::prefix('admin')->group(function () {
 	Route::resource('categories' , 'admin\CategoryAdminController');
 	Route::resource('users' , 'admin\UserAdminController');
 	Route::resource('orders' , 'admin\OrderAdminController');
+	Route::resource('comments' , 'admin\CommentAdminController');
+	Route::resource('fanpages' , 'admin\FanPageAdminController');
 	
 });

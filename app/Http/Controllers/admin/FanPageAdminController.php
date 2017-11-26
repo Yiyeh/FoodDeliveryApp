@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Fanpage;
 
-class WallController extends Controller
+class FanPageAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,8 @@ class WallController extends Controller
      */
     public function index()
     {
-        //
+        $fanpages = Fanpage::orderBy('id','DESC')->paginate();
+        return view('admin.fanpages', compact('fanpages'));
     }
 
     /**
