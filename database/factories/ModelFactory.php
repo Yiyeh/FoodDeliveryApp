@@ -86,3 +86,17 @@ $factory->define(App\FanPage::class, function (Faker\Generator $faker) {
 
     ];
 });
+
+$factory->define(App\Promotion::class, function (Faker\Generator $faker) {
+
+    return [
+        'user_id'       => $faker->numberBetween($min = 1, $max = 10),
+        'foodPlace_id'  => $faker->numberBetween($min = 1, $max = 10),
+        'title'         => $faker->company,
+        'photo'         => $faker->imageUrl($width = 640, $height = 480, 'food'),
+        'description'   => $faker->realText($maxNbChars = 150, $indexSize = 2),
+        'price'         => $faker->numberBetween($min = 1000, $max = 20000),
+
+    ];
+});
+

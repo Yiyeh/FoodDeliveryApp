@@ -5,7 +5,7 @@
 	<title>FoodApp - @yield('title')</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{asset('css/bootstrap3.css')}}" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/toastr.css')}}" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/custom.css')}}" crossorigin="anonymous">
