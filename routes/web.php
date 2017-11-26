@@ -18,7 +18,6 @@ Route::get('/', function () {
 Route::resource('users' , 'UserController');
 Route::resource('delivery' , 'FoodPlaceController');
 Route::resource('categorias' , 'CategoryController');
-Route::resource('orders' , 'OrderController');
 
 
 Route::prefix('admin')->group(function () {  
@@ -28,5 +27,6 @@ Route::prefix('admin')->group(function () {
 	Route::resource('orders' , 'admin\OrderAdminController');
 	Route::resource('comments' , 'admin\CommentAdminController');
 	Route::resource('fanpages' , 'admin\FanPageAdminController');
+	Route::resource('promotions' , 'admin\PromotionAdminController');
 	
 });

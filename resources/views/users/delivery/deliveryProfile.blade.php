@@ -65,6 +65,35 @@
 						<p class="lead text-justify"><strong>{{$delivery->body}}</strong></p>
 					</div>
 				</div>
+
+				@if (count($promotions) > 0)
+				<div class="panel panel-default">
+				  	<div class="panel-heading">
+				    	<h3 class="panel-title">Promociones</h3>
+				  	</div>
+				  	<div class="panel-body">
+
+				    	<table class="table table-striped">
+				    		<thead>
+				    			<th>Imagen</th>
+				    			<th>Descripción</th>
+				    			<th>Precio</th>
+				    		</thead>
+				    		<tbody>
+				    			@foreach ($promotions as $promotion)
+				    			<tr>
+				    				<td><img src="{{$promotion->photo}}" alt="{{$promotion->title}}" width="95%"></td>
+				    				<td><p><strong>{{$promotion->title}}</strong>{{$promotion->description}}</p></td>
+				    				<td>${{$promotion->price}}</td>
+				    			</tr>
+				    			@endforeach
+				    		</tbody>
+				    	</table>
+				    
+				    
+				  	</div>
+				</div>
+				@endif
 				
 				@if (count($comments) > 0)
 				<div class="panel panel-default">

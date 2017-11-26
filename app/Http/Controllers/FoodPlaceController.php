@@ -55,11 +55,12 @@ class FoodPlaceController extends Controller
     {
         $delivery   = FoodPlace::findOrFail($id);
         $comments   = DB::table('comments')->where('foodplace_id', '=', $id)->get();
+        $promotions   = DB::table('promotions')->where('foodplace_id', '=', $id)->get();
         $categories = Category::get();
         $cities = DB::table('food_places')->distinct()->select('city')->get();
 
 
-        return view('users.delivery.deliveryProfile', compact('delivery','categories', 'comments','cities'));
+        return view('users.delivery.deliveryProfile', compact('delivery','categories', 'comments','cities','promotions'));
     }
 
     /**
