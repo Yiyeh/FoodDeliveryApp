@@ -82,8 +82,8 @@
 				    		<tbody>
 				    			@foreach ($promotions as $promotion)
 				    			<tr>
-				    				<td><img src="{{$promotion->photo}}" alt="{{$promotion->title}}" width="95%"></td>
-				    				<td><p><strong>{{$promotion->title}}</strong>{{$promotion->description}}</p></td>
+				    				<td><center><img class="img-thumbnail" src="{{$promotion->photo}}" alt="{{$promotion->title}}" width="70%"></center></td>
+				    				<td><p><strong>{{$promotion->title}}</strong>  <bR> {{$promotion->description}}</p></td>
 				    				<td>${{$promotion->price}}</td>
 				    			</tr>
 				    			@endforeach
