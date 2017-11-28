@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\CategoryRequest;
+use Laracat\Flash\Flash;
 use App\Http\Controllers\Controller;
 use App\Category;
 
@@ -85,6 +86,11 @@ class CategoryAdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::findOrFail($id);
+        
+        $category->delete();
+        flash('La Categoria Fue Eliminada')->success();
+        return back();
+
     }
 }
