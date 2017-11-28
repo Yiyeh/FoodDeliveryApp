@@ -12,7 +12,13 @@
 </head>
 <body class="dashboard">
 
-	<h1 class="page-header text-center">Admin Panel</h1>
+	<style>
+		body{
+			margin-right: 50px;
+		}
+	</style>
+
+	<h1 class="page-header text-center">Admin Panel @yield('action')</h1>
 	
 	<div class="row">
 

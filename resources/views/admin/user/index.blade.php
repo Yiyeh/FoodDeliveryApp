@@ -26,13 +26,13 @@
 				<td>{{$user->premium}}</td>
 				<td>{{$user->online}}</td>
 				<td>
-					<a href="{{ route('users.show', $user->id) }}" class="btn  btn-primary">View</a>
+					<a href="{{ route('user.show', $user->id) }}" class="btn  btn-primary">View</a>
 				</td>
 				<td>
-					<a href="{{ route('users.edit', $user->id) }}" class="btn  btn-warning">Edit</a>
+					<a href="{{ route('user.edit', $user->id) }}" class="btn  btn-warning">Edit</a>
 				</td>
 				<td>
-					<a href="{{ route('users.destroy', $user->id) }}" class="btn  btn-danger">Delete</a>
+					<a href="{{ route('user.destroy', $user->id) }}" class="btn  btn-danger">Delete</a>
 				</td>
 			</tr>
 			@endforeach

@@ -15,9 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('users' , 'user\UserController');
 Route::resource('delivery' , 'user\DeliveryController');
-Route::resource('categorias' , 'user\CategoryController');
+Route::resource('category' , 'user\CategoryController');
 
 
 Route::prefix('admin')->group(function () {  
