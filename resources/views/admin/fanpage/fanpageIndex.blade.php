@@ -11,7 +11,7 @@
 			<tr></tr>
 				<th>ID</th>
 				<th>User</th>
-				<th>FoodPlace</th>
+				<th>Delivery</th>
 				<th>url</th>
 				<th colspan="3">Opciones</th>
 			</tr>
@@ -21,7 +21,7 @@
 			<tr>
 				<td>{{$fanpage->id}}</td>
 				<td>{{$fanpage->user_id}}</td>
-				<td>{{$fanpage->foodplace_id}}</td>
+				<td>{{$fanpage->delivery_id}}</td>
 				<td>{{$fanpage->url}}</td>
 				<td>
 					<a href="{{ route('fanpage.show', $fanpage->id) }}" class="btn  btn-primary">View</a>

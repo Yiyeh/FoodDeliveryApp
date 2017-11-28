@@ -11,7 +11,7 @@
 			<tr></tr>
 				<th>ID</th>
 				<th>User</th>
-				<th>FoodPlace</th>
+				<th>Delivery</th>
 				<th>Comment</th>
 				<th>Score</th>
 				<th colspan="3">Opciones</th>
@@ -22,7 +22,7 @@
 			<tr>
 				<td>{{$comment->id}}</td>
 				<td>{{$comment->user_id}}</td>
-				<td>{{$comment->foodplace_id}}</td>
+				<td>{{$comment->delivery_id}}</td>
 				<td>{{$comment->comment}}</td>
 				<td>{{$comment->score}}</td>
 				<td>

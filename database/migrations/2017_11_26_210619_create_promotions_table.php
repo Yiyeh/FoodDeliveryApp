@@ -16,7 +16,7 @@ class CreatePromotionsTable extends Migration
         Schema::create('promotions', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->integer('foodplace_id')->unsigned();
+            $table->integer('delivery_id')->unsigned();
             $table->string('title');
             $table->string('photo');
             $table->string('description');
@@ -28,8 +28,8 @@ class CreatePromotionsTable extends Migration
                     ->references('id')->on('users')
                     ->onDelete('cascade');
 
-            $table->foreign('foodplace_id')
-                    ->references('id')->on('foodPlaces')
+            $table->foreign('delivery_id')
+                    ->references('id')->on('deliveries')
                     ->onDelete('cascade');   
 
 

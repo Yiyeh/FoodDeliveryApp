@@ -16,12 +16,12 @@ Route::get('/', function () {
 });
 
 Route::resource('users' , 'UserController');
-Route::resource('delivery' , 'FoodPlaceController');
+Route::resource('delivery' , 'DeliveryController');
 Route::resource('categorias' , 'CategoryController');
 
 
 Route::prefix('admin')->group(function () {  
-	Route::resource('delivery' , 'admin\FoodPlaceAdminController');
+	Route::resource('delivery' , 'admin\DeliveryAdminController');
 	Route::resource('category' , 'admin\CategoryAdminController');
 	Route::resource('user' , 'admin\UserAdminController');
 	Route::resource('order' , 'admin\OrderAdminController');

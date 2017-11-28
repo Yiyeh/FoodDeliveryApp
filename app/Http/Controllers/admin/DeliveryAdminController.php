@@ -4,9 +4,9 @@ namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Promotion;
+use App\Delivery;
 
-class PromotionAdminController extends Controller
+class DeliveryAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,9 @@ class PromotionAdminController extends Controller
      */
     public function index()
     {
-        $promotions = Promotion::orderBy('id','DESC')->paginate();
-        return view('admin.promotion.promotionIndex',compact('promotions'));
+        $deliveries = Delivery::orderBy('id','DESC')->paginate();
+        
+        return view('admin.delivery.deliveryIndex', compact('deliveries'));
     }
 
     /**

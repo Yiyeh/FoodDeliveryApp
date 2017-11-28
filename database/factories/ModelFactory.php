@@ -33,7 +33,7 @@ $factory->define(App\Category::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\FoodPlace::class, function (Faker\Generator $faker) {
+$factory->define(App\Delivery::class, function (Faker\Generator $faker) {
 
     return [
     	'user_id'	=> $faker->numberBetween($min = 1, $max = 10),
@@ -58,7 +58,7 @@ $factory->define(App\Order::class, function (Faker\Generator $faker) {
 
     return [
     	'user_id'	     => $faker->numberBetween($min = 1, $max = 10),
-        'foodPlace_id'   => $faker->numberBetween($min = 1, $max = 10),
+        'delivery_id'   => $faker->numberBetween($min = 1, $max = 10),
         'body' 		     => $faker->realText($maxNbChars = 150, $indexSize = 2),  
         'phone'		     => $faker->e164PhoneNumber,
         'address' 	     => $faker->streetAddress,
@@ -71,7 +71,7 @@ $factory->define(App\Comment::class, function (Faker\Generator $faker) {
 
     return [
         'user_id'        => $faker->numberBetween($min = 1, $max = 30),
-        'foodPlace_id'   => $faker->numberBetween($min = 1, $max = 50),
+        'delivery_id'   => $faker->numberBetween($min = 1, $max = 50),
         'comment'        => $faker->realText($maxNbChars = 150, $indexSize = 2),  
         'score'          => $faker->numberBetween($min = 1, $max = 5),
     ];
@@ -81,7 +81,7 @@ $factory->define(App\FanPage::class, function (Faker\Generator $faker) {
 
     return [
         'user_id'       => $faker->numberBetween($min = 1, $max = 10),
-        'foodPlace_id'  => $faker->numberBetween($min = 1, $max = 10),
+        'delivery_id'  => $faker->numberBetween($min = 1, $max = 10),
         'url'           => "http://Facebook.com/nowaycl",  
 
     ];
@@ -91,7 +91,7 @@ $factory->define(App\Promotion::class, function (Faker\Generator $faker) {
 
     return [
         'user_id'       => $faker->numberBetween($min = 1, $max = 10),
-        'foodPlace_id'  => $faker->numberBetween($min = 1, $max = 50),
+        'delivery_id'  => $faker->numberBetween($min = 1, $max = 50),
         'title'         => $faker->company,
         'photo'         => $faker->imageUrl($width = 640, $height = 480, 'food'),
         'description'   => $faker->realText($maxNbChars = 150, $indexSize = 2),

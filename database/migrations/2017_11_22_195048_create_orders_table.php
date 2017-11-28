@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
 
             $table->integer('user_id')->unsigned();
-            $table->integer('foodPlace_id')->unsigned();
+            $table->integer('delivery_id')->unsigned();
             
             $table->text('body');
             $table->text('phone');
@@ -29,8 +29,8 @@ class CreateOrdersTable extends Migration
                     ->references('id')->on('users')
                     ->onDelete('cascade');
 
-            $table->foreign('foodPlace_id')
-                    ->references('id')->on('food_places')
+            $table->foreign('delivery_id')
+                    ->references('id')->on('deliveries')
                     ->onDelete('cascade');
 
         });

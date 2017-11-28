@@ -1,12 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Promotion;
+use Illuminate\Support\Facades\DB;
+use App\Delivery;
+use App\Category;
+use App\Comment;
 
-class PromotionAdminController extends Controller
+class DeliveryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +17,11 @@ class PromotionAdminController extends Controller
      */
     public function index()
     {
-        $promotions = Promotion::orderBy('id','DESC')->paginate();
-        return view('admin.promotion.promotionIndex',compact('promotions'));
+        $deliveries = Delivery::orderBy('id','DESC')->paginate();
+        $categories = Category::get();
+        $cities = DB::table('deliveries')->distinct()->select('city')->get();
+
+        return view('users.delivery.deliveryIndex', compact('deliveries','categories','cities'));
     }
 
     /**
@@ -48,7 +53,14 @@ class PromotionAdminController extends Controller
      */
     public function show($id)
     {
-        //
+        $delivery   = Delivery::findOrFail($id);
+        $comments   = DB::table('comments')->where('delivery_id', '=', $id)->get();
+        $promotions   = DB::table('promotions')->where('delivery_id', '=', $id)->get();
+        $categories = Category::get();
+        $cities = DB::table('deliveries')->distinct()->select('city')->get();
+
+
+        return view('users.delivery.deliveryShow', compact('delivery','categories', 'comments','cities','promotions'));
     }
 
     /**

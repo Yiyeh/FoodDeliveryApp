@@ -44,6 +44,9 @@
 			      		<li class="nav-item">
 			        		<a class="nav-link" href="{{ route('fanpage.index') }}">Fan Pages</a>
 			      		</li>
+			      		<li class="nav-item">
+			        		<a class="nav-link" href="{{ route('promotion.index') }}">Promotions</a>
+			      		</li>
 		      		</ul>
 				  	</div>
 			</div>     		
