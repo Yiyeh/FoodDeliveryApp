@@ -27,22 +27,22 @@
 			    			<a class="nav-link" href="/">View Site</a>
 			      		</li>
 					  	<li class="nav-item">
-			    			<a class="nav-link" href="{{ route('users.index') }}">Users</a>
+			    			<a class="nav-link" href="{{ route('user.index') }}">Users</a>
 			      		</li>
 			      		<li class="nav-item">
-			    			<a class="nav-link" href="{{ route('deliveries.index') }}">Deliveries</a>
+			    			<a class="nav-link" href="{{ route('delivery.index') }}">Deliveries</a>
 			      		</li>
 			      		<li class="nav-item">
-			        		<a class="nav-link" href="{{ route('categories.index') }}">Categories</a>
+			        		<a class="nav-link" href="{{ route('category.index') }}">Categories</a>
 			      		</li>
 			      		<li class="nav-item">
-			        		<a class="nav-link" href="{{ route('orders.index') }}">Orders</a>
+			        		<a class="nav-link" href="{{ route('order.index') }}">Orders</a>
 			      		</li>
 			      		<li class="nav-item">
-			        		<a class="nav-link" href="{{ route('comments.index') }}">Comments</a>
+			        		<a class="nav-link" href="{{ route('comment.index') }}">Comments</a>
 			      		</li>
 			      		<li class="nav-item">
-			        		<a class="nav-link" href="{{ route('fanpages.index') }}">Fan Pages</a>
+			        		<a class="nav-link" href="{{ route('fanpage.index') }}">Fan Pages</a>
 			      		</li>
 		      		</ul>
 				  	</div>

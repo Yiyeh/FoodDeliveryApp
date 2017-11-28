@@ -17,7 +17,7 @@ class FoodPlaceAdminController extends Controller
     {
         $deliveries = FoodPlace::orderBy('id','DESC')->paginate();
         
-        return view('admin.foodplaces', compact('deliveries'));
+        return view('admin.delivery.deliveryIndex', compact('deliveries'));
     }
 
     /**

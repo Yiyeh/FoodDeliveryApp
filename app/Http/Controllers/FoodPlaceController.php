@@ -21,7 +21,7 @@ class FoodPlaceController extends Controller
         $categories = Category::get();
         $cities = DB::table('food_places')->distinct()->select('city')->get();
 
-        return view('users.delivery.delivery', compact('deliveries','categories','cities'));
+        return view('users.delivery.deliveryIndex', compact('deliveries','categories','cities'));
     }
 
     /**
@@ -60,7 +60,7 @@ class FoodPlaceController extends Controller
         $cities = DB::table('food_places')->distinct()->select('city')->get();
 
 
-        return view('users.delivery.deliveryProfile', compact('delivery','categories', 'comments','cities','promotions'));
+        return view('users.delivery.deliveryShow', compact('delivery','categories', 'comments','cities','promotions'));
     }
 
     /**

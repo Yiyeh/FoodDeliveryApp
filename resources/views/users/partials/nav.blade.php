@@ -28,7 +28,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="/admin/deliveries">Administracion</a>
+          <a class="nav-link" href="/admin/delivery">Administracion</a>
         </li>
         
         <li class="dropdown">

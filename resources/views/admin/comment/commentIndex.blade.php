@@ -1,4 +1,4 @@
-@extends('.admin.adminlayout')
+@extends('admin.layout')
 
 @section('title','Orders List')
 
@@ -26,13 +26,13 @@
 				<td>{{$comment->comment}}</td>
 				<td>{{$comment->score}}</td>
 				<td>
-					<a href="{{ route('comments.show', $comment->id) }}" class="btn  btn-primary">View</a>
+					<a href="{{ route('comment.show', $comment->id) }}" class="btn  btn-primary">View</a>
 				</td>
 				<td>
-					<a href="{{ route('comments.edit', $comment->id) }}" class="btn  btn-warning">Edit</a>
+					<a href="{{ route('comment.edit', $comment->id) }}" class="btn  btn-warning">Edit</a>
 				</td>
 				<td>
-					<a href="{{ route('comments.destroy', $comment->id) }}" class="btn  btn-danger">Delete</a>
+					<a href="{{ route('comment.destroy', $comment->id) }}" class="btn  btn-danger">Delete</a>
 				</td>
 			</tr>		
 			@endforeach

@@ -17,7 +17,7 @@ class OrderAdminController extends Controller
     public function index()
     {
         $orders = Order::orderBy('id','DESC')->paginate();
-        return view('admin.orders', compact('orders'));
+        return view('admin.order.orderIndex', compact('orders'));
 
     }
 

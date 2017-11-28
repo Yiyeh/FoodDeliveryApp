@@ -1,4 +1,4 @@
-@extends('.admin.adminlayout')
+@extends('admin.layout')
 
 @section('title','Orders List')
 
@@ -30,13 +30,13 @@
 				<td>{{$order->address}}</td>
 				<td>{{$order->ready}}</td>
 				<td>
-					<a href="{{ route('orders.show', $order->id) }}" class="btn  btn-primary">View</a>
+					<a href="{{ route('order.show', $order->id) }}" class="btn  btn-primary">View</a>
 				</td>
 				<td>
-					<a href="{{ route('orders.edit', $order->id) }}" class="btn  btn-warning">Edit</a>
+					<a href="{{ route('order.edit', $order->id) }}" class="btn  btn-warning">Edit</a>
 				</td>
 				<td>
-					<a href="{{ route('orders.destroy', $order->id) }}" class="btn  btn-danger">Delete</a>
+					<a href="{{ route('order.destroy', $order->id) }}" class="btn  btn-danger">Delete</a>
 				</td>
 			</tr>		
 			@endforeach

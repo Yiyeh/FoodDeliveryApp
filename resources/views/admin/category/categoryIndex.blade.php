@@ -1,4 +1,4 @@
-@extends('admin.adminlayout')
+@extends('admin.layout')
 
 @section('title','Categories List')
 
@@ -22,10 +22,10 @@
 					<td>{{$category->name}}</td>
 					<td>{{$category->slug}}</td>
 					<td>
-						<a href="{{ route('categories.edit', $category->id) }}" class="btn  btn-warning">Edit</a>
+						<a href="{{ route('category.edit', $category->id) }}" class="btn  btn-warning">Edit</a>
 					</td>
 					<td>
-						<a href="{{ route('categories.destroy', $category->id) }}" class="btn  btn-danger">Delete</a>
+						<a href="{{ route('category.destroy', $category->id) }}" class="btn  btn-danger">Delete</a>
 					</td>
 				</tr>
 		

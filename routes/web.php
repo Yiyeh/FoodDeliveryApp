@@ -21,12 +21,12 @@ Route::resource('categorias' , 'CategoryController');
 
 
 Route::prefix('admin')->group(function () {  
-	Route::resource('deliveries' , 'admin\FoodPlaceAdminController');
-	Route::resource('categories' , 'admin\CategoryAdminController');
-	Route::resource('users' , 'admin\UserAdminController');
-	Route::resource('orders' , 'admin\OrderAdminController');
-	Route::resource('comments' , 'admin\CommentAdminController');
-	Route::resource('fanpages' , 'admin\FanPageAdminController');
-	Route::resource('promotions' , 'admin\PromotionAdminController');
+	Route::resource('delivery' , 'admin\FoodPlaceAdminController');
+	Route::resource('category' , 'admin\CategoryAdminController');
+	Route::resource('user' , 'admin\UserAdminController');
+	Route::resource('order' , 'admin\OrderAdminController');
+	Route::resource('comment' , 'admin\CommentAdminController');
+	Route::resource('fanpage' , 'admin\FanPageAdminController');
+	Route::resource('promotion' , 'admin\PromotionAdminController');
 	
 });

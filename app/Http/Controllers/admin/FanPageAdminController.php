@@ -16,7 +16,7 @@ class FanPageAdminController extends Controller
     public function index()
     {
         $fanpages = Fanpage::orderBy('id','DESC')->paginate();
-        return view('admin.fanpages', compact('fanpages'));
+        return view('admin.fanpage.fanpageIndex', compact('fanpages'));
     }
 
     /**
