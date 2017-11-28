@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\user;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class PromotionController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.

@@ -17,7 +17,7 @@ class DeliveryAdminController extends Controller
     {
         $deliveries = Delivery::orderBy('id','DESC')->paginate();
         
-        return view('admin.delivery.deliveryIndex', compact('deliveries'));
+        return view('admin.delivery.index', compact('deliveries'));
     }
 
     /**

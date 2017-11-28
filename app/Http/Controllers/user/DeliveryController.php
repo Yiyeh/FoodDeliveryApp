@@ -1,10 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\user;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Delivery;
+use App\Category;
+use App\Comment;
 
-class CommentController extends Controller
+class DeliveryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +17,11 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        $deliveries = Delivery::orderBy('id','DESC')->paginate();
+        $categories = Category::get();
+        $cities = DB::table('deliveries')->distinct()->select('city')->get();
+
+        return view('users.delivery.index', compact('deliveries','categories','cities'));
     }
 
     /**
@@ -45,7 +53,14 @@ class CommentController extends Controller
      */
     public function show($id)
     {
-        //
+        $delivery   = Delivery::findOrFail($id);
+        $comments   = DB::table('comments')->where('delivery_id', '=', $id)->get();
+        $promotions   = DB::table('promotions')->where('delivery_id', '=', $id)->get();
+        $categories = Category::get();
+        $cities = DB::table('deliveries')->distinct()->select('city')->get();
+
+
+        return view('users.delivery.show', compact('delivery','categories', 'comments','cities','promotions'));
     }
 
     /**

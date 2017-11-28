@@ -16,7 +16,7 @@ class PromotionAdminController extends Controller
     public function index()
     {
         $promotions = Promotion::orderBy('id','DESC')->paginate();
-        return view('admin.promotion.promotionIndex',compact('promotions'));
+        return view('admin.promotion.index',compact('promotions'));
     }
 
     /**
