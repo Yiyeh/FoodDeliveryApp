@@ -19,12 +19,7 @@
 			{!! Form::label('name', 'Nombre', ['class' => 'pull-left']) !!}
 			{!! Form::text('name', null, [ 'class' => 'form-control']) !!}	
 		</div>
-	
-		<div class="form-group">
-			{!! Form::label('slug', 'Slug', ['class' => 'pull-left']) !!}
-			{!! Form::text('slug', null, [ 'class' => 'form-control']) !!}	
-		</div>
-	
+		
 		<div class="form-group">
 			{!! Form::submit('Enviar', [ 'class' => 'btn btn-primary']) !!}	
 		</div>

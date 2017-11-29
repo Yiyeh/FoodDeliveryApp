@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\user;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Delivery;
 use App\Category;
 use App\Comment;
+use App\Promotion;
 
 class DeliveryController extends Controller
 {
@@ -19,7 +19,7 @@ class DeliveryController extends Controller
     {
         $deliveries = Delivery::orderBy('id','DESC')->paginate();
         $categories = Category::get();
-        $cities = DB::table('deliveries')->distinct()->select('city')->get();
+        $cities = Delivery::distinct()->select('city')->get();
 
         return view('users.delivery.index', compact('deliveries','categories','cities'));
     }
@@ -54,10 +54,10 @@ class DeliveryController extends Controller
     public function show($id)
     {
         $delivery   = Delivery::findOrFail($id);
-        $comments   = DB::table('comments')->where('delivery_id', '=', $id)->get();
-        $promotions   = DB::table('promotions')->where('delivery_id', '=', $id)->get();
+        $comments   = Comment::where('delivery_id', '=', $id)->get();
+        $promotions   = Promotion::where('delivery_id', '=', $id)->get();
         $categories = Category::get();
-        $cities = DB::table('deliveries')->distinct()->select('city')->get();
+        $cities = Delivery::distinct()->select('city')->get();
 
 
         return view('users.delivery.show', compact('delivery','categories', 'comments','cities','promotions'));

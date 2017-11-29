@@ -39,7 +39,16 @@ class CategoryAdminController extends Controller
      */
     public function store(CategoryRequest $request)
     {
-        return 'Producto Guardado';
+        $category = new Category;
+
+        $category->name = $request->name;
+        $category->slug = str_slug($category->name);
+
+        $category->save();
+
+        flash('La Categoria Fue Creada')->success();
+
+        return redirect()->route('category.index');
     }
 
     /**
@@ -75,8 +84,17 @@ class CategoryAdminController extends Controller
      */
     public function update(CategoryRequest $request, $id)
     {
-        return 'Producto Actualizado '. $id;
-    }
+        $category = Category::findOrFail($id);
+
+        $category->name = $request->name;
+        $category->slug = str_slug($category->name);
+
+        $category->save();
+
+        flash('La Categoria Fue Modificada')->success();
+
+        return redirect()->route('category.index');
+        }
 
     /**
      * Remove the specified resource from storage.

@@ -15,7 +15,7 @@
 				<th>ID</th>
 				<th>Name</th>
 				<th>Slug</th>
-				<th colspan="3">Opciones</th>
+				<th colspan="2">Opciones</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -24,9 +24,6 @@
 					<td>{{$category->id}}</td>
 					<td>{{$category->name}}</td>
 					<td>{{$category->slug}}</td>
-					<td width="50px">
-						<a href="{{ route('category.show', $category->id) }}" class="btn btn-primary">View</a>
-					</td>
 					<td width="50px">	
 						<a href="{{ route('category.edit', $category->id) }}" class="btn btn-warning">Edit</a>
 					</td>	
