@@ -27,21 +27,23 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Category::class, function (Faker\Generator $faker) {
 
+    $name = $faker->word(5);
     return [
-        'name' => $faker->word,
-        'slug' => $faker->word,
+        'name' => $name,
+        'slug' => str_slug($name),
     ];
 });
 
 $factory->define(App\Delivery::class, function (Faker\Generator $faker) {
 
+    $name = $faker->sentence(2);
     return [
     	'user_id'	=> $faker->numberBetween($min = 1, $max = 10),
     	'category_id'	=> $faker->numberBetween($min = 1, $max = 10),
-        'name' 		=> $faker->company,
-        'slug' 		=> $faker->slug,
+        'name'      => $name,
+        'slug'      => str_slug($name),
         'short' 	=> $faker->realText($maxNbChars = 150, $indexSize = 2),
-        'body' 		=> $faker->text($maxNbChars = 200),
+        'body' 		=> $faker->text(500),
         'phone'		=> $faker->e164PhoneNumber,
         'sector' 	=> $faker->streetName,
         'logo' 		=> $faker->imageUrl($width = 640, $height = 480, 'food'),

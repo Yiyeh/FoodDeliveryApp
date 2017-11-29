@@ -12,6 +12,12 @@ class DeliveryTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Delivery::class, 30)->create();
+        factory(App\Delivery::class, 30)->create()->each(function(App\Delivery $delivery){
+        	$delivery->categories()->attach([
+        		rand(1,5),
+        		rand(6,14),
+        		rand(15,20),
+        	]);
+        });
     }
 }
