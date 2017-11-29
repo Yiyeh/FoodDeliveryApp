@@ -29,3 +29,6 @@ Route::prefix('admin')->group(function () {
 	Route::resource('promotion' , 'admin\PromotionAdminController');
 	
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
