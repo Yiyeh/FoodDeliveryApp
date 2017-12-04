@@ -5,7 +5,8 @@
 @section('content')
 
 <div class="col-sm-11">
-	<a href="#" class="btn  btn-primary pull-right">New User</a>
+	<a href="{{ route('user.create') }}" class="btn  btn-primary pull-right">New User</a>
+	@include('flash::message')
 	<table class="table table-striped table-sm">
 		<thead>
 			<tr></tr>
@@ -31,8 +32,12 @@
 				<td>
 					<a href="{{ route('user.edit', $user->id) }}" class="btn  btn-warning">Edit</a>
 				</td>
-				<td>
-					<a href="{{ route('user.destroy', $user->id) }}" class="btn  btn-danger">Delete</a>
+				<td width="50px">	
+					<form action="{{ route('user.destroy', $user->id) }}" method="POST">
+						{{csrf_field()}}
+						<input type="hidden" name="_method" value="DELETE">
+						<button class="btn btn-danger">Delete</button>
+					</form>
 				</td>
 			</tr>
 			@endforeach

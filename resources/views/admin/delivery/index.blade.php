@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="col-sm-11">
-	<a href="#" class="btn  btn-primary pull-right">New Foodplace</a>
+	<a href="#" class="btn  btn-primary pull-right">New Foodplace</a><hr>
 	<table class="table  table-responsive table-striped table-sm">
 		<thead>
 			<tr></tr>
@@ -27,8 +27,8 @@
 			@foreach ($deliveries as $delivery)
 			<tr>
 				<td>{{$delivery->id}}</td>
-				<td>{{$delivery->user_id}}</td>
-				<td>{{$delivery->category}}</td>
+				<td>{{$delivery->user->name}}</td>
+				<td>{{$delivery->category_id}}</td>
 				<td>{{$delivery->name}}</td>
 				<td>{{$delivery->phone}}</td>
 				<td>{{$delivery->sector}}</td>
@@ -44,7 +44,11 @@
 					<a href="{{ route('delivery.edit', $delivery->id) }}" class="btn  btn-warning">Edit</a>
 				</td>
 				<td>
-					<a href="{{ route('delivery.destroy', $delivery->id) }}" class="btn  btn-danger">Delete</a>
+					<form action="{{ route('delivery.destroy', $delivery->id) }}" method="POST">
+						{{csrf_field()}}
+						<input type="hidden" name="_method" value="DELETE">
+						<button class="btn btn-danger">Delete</button>
+					</form>
 				</td>
 			</tr>		
 			@endforeach

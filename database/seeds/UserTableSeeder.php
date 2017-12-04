@@ -20,7 +20,7 @@ class UserTableSeeder extends Seeder
         	'password' 	=> bcrypt('123'),
         	'premium' 	=> 365,
         	'online' 	=> 1,
-        	'type' 		=> 'admin',
+        	'type' 		=> 'ADMIN',
         	'remember_token' => str_random(10)	
         ]);
     }

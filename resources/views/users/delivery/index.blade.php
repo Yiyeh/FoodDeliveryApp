@@ -1,4 +1,4 @@
-@extends('users.layout')
+@extends('layouts.app')
 
 @section('title', 'delivery')
 
@@ -8,13 +8,6 @@
 	<div class="container">
 
 		<div class="row">
-			<div class="col-sm-12">
-				<ul>
-					@extends('users.partials.nav')
-				</ul>
-			</div>
-
-			
 
 			<!-- div lateral Categorias -->
 			<div class="col-sm-3">

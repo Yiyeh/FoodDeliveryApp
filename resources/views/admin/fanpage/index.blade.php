@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="col-sm-11">
-	<a href="#" class="btn  btn-primary pull-right">New FanPage</a>
+	<a href="#" class="btn  btn-primary pull-right">New FanPage</a><hr>
 	<table class="table table-striped table-sm">
 		<thead>
 			<tr></tr>

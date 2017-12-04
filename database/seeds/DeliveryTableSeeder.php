@@ -16,7 +16,7 @@ class DeliveryTableSeeder extends Seeder
         	$delivery->categories()->attach([
         		rand(1,5),
         		rand(6,14),
-        		rand(15,20),
+        		rand(15,19),
         	]);
         });
     }

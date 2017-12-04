@@ -29,8 +29,8 @@ class CreateDeliveriesTable extends Migration
             $table->string('fbPage')->nullable();  
             $table->string('commune')->nullable(); 
             $table->string('city');
-            $table->boolean('premium');     
-            $table->boolean('published');  
+            $table->enum('premium', ['TRUE','FALSE'])->default('FALSE');
+            $table->enum('published', ['PUBLISHED','DRAFT'])->default('DRAFT');  
             $table->timestamps();
 
             $table->foreign('user_id')

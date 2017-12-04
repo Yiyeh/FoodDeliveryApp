@@ -18,7 +18,7 @@ class DeliveryController extends Controller
     public function index()
     {
         $deliveries = Delivery::orderBy('id','DESC')->paginate();
-        $categories = Category::get();
+        $categories = Category::orderBy('name','ASC')->get();
         $cities = Delivery::distinct()->select('city')->get();
 
         return view('users.delivery.index', compact('deliveries','categories','cities'));

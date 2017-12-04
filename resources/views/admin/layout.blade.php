@@ -59,8 +59,7 @@
 	  	</div>
 
 	  
-		<center>
-			
+		<center>		
 			@yield('content')
 		</center>
 
@@ -70,6 +69,9 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="{{ asset('js/bootstrap3.js') }}"></script>
     <script src="{{ asset('js/toastr.js') }}"></script>
-	
+    <script>
+		$('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+	</script>
+		
 </body>
 </html>

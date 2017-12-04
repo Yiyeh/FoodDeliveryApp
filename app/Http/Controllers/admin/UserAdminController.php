@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Laracast\Flash\Flash;
 use App\User;
 
 class UserAdminController extends Controller
@@ -26,7 +27,7 @@ class UserAdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.user.create');
     }
 
     /**
@@ -37,7 +38,17 @@ class UserAdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User;
+        $user->name     = $request->name;
+        $user->email    = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->premium  = $request->premium;
+        $user->online   = 0;
+        $user->type     = $request->type;
+        $user->save();
+
+        flash('El Usuario se ha creado con exito')->success();
+        return redirect()->route('user.index');
     }
 
     /**
@@ -48,7 +59,8 @@ class UserAdminController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::findOrFail($id);
+        return view('admin.user.show',compact('id'));
     }
 
     /**
@@ -59,7 +71,8 @@ class UserAdminController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findOrFail($id);
+        return view('admin.user.edit',compact('user'));
     }
 
     /**
@@ -71,7 +84,12 @@ class UserAdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->fill($request->all());
+        $user->premium = $request->premium;
+        $user->save();
+        flash('El usuario se ha modificado')->warning();
+        return redirect()->route('user.index');
     }
 
     /**
@@ -82,6 +100,9 @@ class UserAdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->delete();
+        flash('El usuario se ha eliminado')->warning();
+        return redirect()->route('user.index');
     }
 }

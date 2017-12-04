@@ -13,12 +13,14 @@
 
 		@include('admin.partials.errors')
 	
-		{!! Form::open(['route' => ['category.store']]) !!}
+		{!! Form::open(['route' => ['user.store']]) !!}
 	
 		<div class="form-group">
 			{!! Form::label('name', 'Nombre', ['class' => 'pull-left']) !!}
 			{!! Form::text('name', null, [ 'class' => 'form-control']) !!}	
 		</div>
+
+		
 	
 		<div class="form-group">
 			{!! Form::submit('Enviar', [ 'class' => 'btn btn-primary']) !!}	

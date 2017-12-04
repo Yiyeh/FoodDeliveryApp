@@ -50,8 +50,8 @@ $factory->define(App\Delivery::class, function (Faker\Generator $faker) {
         'fbPage'	=> 'www.facebook.com',
         'commune'	=> $faker->state,
         'city'		=> $faker->city,
-        'premium'	=> $faker->boolean($chanceOfGettingTrue = 50),
-        'published' => $faker->boolean($chanceOfGettingTrue = 50),
+        'premium'	=> $faker->randomElement(['TRUE','FALSE']),
+        'published' => $faker->randomElement(['PUBLISHED','DRAFT']),
 
     ];
 });
@@ -73,7 +73,7 @@ $factory->define(App\Comment::class, function (Faker\Generator $faker) {
 
     return [
         'user_id'        => $faker->numberBetween($min = 1, $max = 30),
-        'delivery_id'   => $faker->numberBetween($min = 1, $max = 50),
+        'delivery_id'    => $faker->numberBetween($min = 1, $max = 30),
         'comment'        => $faker->realText($maxNbChars = 150, $indexSize = 2),  
         'score'          => $faker->numberBetween($min = 1, $max = 5),
     ];
@@ -93,7 +93,7 @@ $factory->define(App\Promotion::class, function (Faker\Generator $faker) {
 
     return [
         'user_id'       => $faker->numberBetween($min = 1, $max = 10),
-        'delivery_id'  => $faker->numberBetween($min = 1, $max = 50),
+        'delivery_id'  => $faker->numberBetween($min = 1, $max = 30),
         'title'         => $faker->company,
         'photo'         => $faker->imageUrl($width = 640, $height = 480, 'food'),
         'description'   => $faker->realText($maxNbChars = 150, $indexSize = 2),
