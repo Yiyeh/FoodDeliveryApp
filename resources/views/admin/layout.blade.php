@@ -88,7 +88,10 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li> 
-                                        <a href="{{url('/misdeliveries')}}">Mis Deliveries</a> 
+                                        <a href="{{ Route('user.delivery.mydelivery') }}">Mis Deliveries</a> 
+                                    </li>
+                                    <li> 
+                                        <a href="{{ Route('user.promotion.index') }}">Mis Promociones</a> 
                                     </li>
                                     <li>
                                         <a href="{{ route('logout') }}"

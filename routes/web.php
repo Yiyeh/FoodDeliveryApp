@@ -21,7 +21,8 @@ Route::get('/mydelivery' , ['as' => 'user.delivery.mydelivery', 'uses' => 'user\
 
 
 Route::resource('category' , 'user\CategoryController', ['as' => 'user']);
-
+Route::resource('comment' , 'user\CommentController', ['as' => 'user']);
+Route::resource('promotion' , 'user\PromotionController', ['as' => 'user']);
 
 //Admin Panel
 Route::prefix('admin')->group(function () {  

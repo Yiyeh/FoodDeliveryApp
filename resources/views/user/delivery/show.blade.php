@@ -129,23 +129,25 @@
 				    	<h3 class="panel-title">Dejar Recomendación</h3>
 				  	</div>
 					<div class="panel-body">
-						<form action="">
+						<form action="{{route('user.comment.store')}}" method="POST">
+							{{csrf_field()}}
 							<div class="form-group">
 								<p class="lead">Puntaje:</p>
 								<div class="stars">
-								    <input class="star star-5" id="star-5" type="radio" name="star"/>
+								    <input class="star star-5" id="star-5" type="radio" name="score" value="5" />
 								    <label class="star star-5" for="star-5"></label>
-								    <input class="star star-4" id="star-4" type="radio" name="star"/>
+								    <input class="star star-4" id="star-4" type="radio" name="score" value="4" />
 								    <label class="star star-4" for="star-4"></label>
-								    <input class="star star-3" id="star-3" type="radio" name="star"/>
+								    <input class="star star-3" id="star-3" type="radio" name="score" value="3" />
 								    <label class="star star-3" for="star-3"></label>
-								    <input class="star star-2" id="star-2" type="radio" name="star"/>
+								    <input class="star star-2" id="star-2" type="radio" name="score" value="2" />
 								    <label class="star star-2" for="star-2"></label>
-								    <input class="star star-1" id="star-1" type="radio" name="star"/>
+								    <input class="star star-1" id="star-1" type="radio" name="score" value="1" />
 								    <label class="star star-1" for="star-1"></label>
 								</div>
 								<span>
-									<input class="form-control" type="area" width="100%" placeholder="Escriba su recomendación">
+									<input class="form-control" type="area" name="comment" width="100%" placeholder="Escriba su recomendación">
+									<input type="hidden" value="{{$delivery->id}}" name="delivery">
 								</span><br>
 								<input class="form-control" type="submit" name="">
 							</div>	

@@ -54,7 +54,7 @@ class DeliveryAdminController extends Controller
         $delivery->body         = $request->body;
         $delivery->phone        = $request->phone;
         $delivery->sector       = $request->sector;
-        $delivery->logo         = 'http://lorempixel.com/200/200/food/';
+        $delivery->logo         = 'http://lorempixel.com/640/480/food/';
         $delivery->fbPage       = $request->fbPage;
         $delivery->commune      = $request->commune;
         $delivery->city         = $request->city;
@@ -102,7 +102,7 @@ class DeliveryAdminController extends Controller
     {
         $delivery = Delivery::findOrFail($id);
         $delivery->fill($request->all());
-        $delivery->logo         = 'http://lorempixel.com/200/200/food/';
+        $delivery->logo         = 'http://lorempixel.com/640/480/food/';
         $delivery->save();
 
         flash('El delivery se ha modificado.')->warning();

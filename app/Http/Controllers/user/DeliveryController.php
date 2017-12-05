@@ -61,7 +61,7 @@ class DeliveryController extends Controller
         $delivery->body         = $request->body;
         $delivery->phone        = $request->phone;
         $delivery->sector       = $request->sector;
-        $delivery->logo         = 'http://lorempixel.com/200/200/food/';
+        $delivery->logo         = 'http://lorempixel.com/640/480/food/';
         $delivery->fbPage       = $request->fbPage;
         $delivery->commune      = $request->commune;
         $delivery->city         = $request->city;
@@ -70,7 +70,7 @@ class DeliveryController extends Controller
         $delivery->save();
 
         flash('El delivery se ha creado.')->success();
-        return redirect()->route('/mydelivery');
+        return redirect()->route('user.delivery.mydelivery');
     }
 
     /**
@@ -115,11 +115,11 @@ class DeliveryController extends Controller
     {
         $delivery = Delivery::findOrFail($id);
         $delivery->fill($request->all());
-        $delivery->logo         = 'http://lorempixel.com/200/200/food/';
+        $delivery->logo         = 'http://lorempixel.com/640/480/food/';
         $delivery->save();
 
         flash('El delivery se ha modificado.')->warning();
-        return redirect()->route('/mydelivery');
+        return redirect()->route('user.delivery.mydelivery');
     }
 
     /**
@@ -134,6 +134,6 @@ class DeliveryController extends Controller
         $delivery->delete();
 
         flash('El delivery ha sido eliminado')->error();
-        return redirect()->route('/mydelivery');
+        return redirect()->route('user.delivery.mydelivery');
     }
 }

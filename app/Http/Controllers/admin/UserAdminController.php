@@ -86,7 +86,8 @@ class UserAdminController extends Controller
     {
         $user = User::findOrFail($id);
         $user->fill($request->all());
-        $user->premium = $request->premium;
+        $user->premium  = $request->premium;
+        $user->type     = $request->type;
         $user->save();
         flash('El usuario se ha modificado')->warning();
         return redirect()->route('admin.user.index');

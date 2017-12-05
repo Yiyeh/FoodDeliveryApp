@@ -49,7 +49,7 @@ class PromotionAdminController extends Controller
         $promotion->user_id     = \Auth::user()->id;
         $promotion->delivery_id = $request->delivery;
         $promotion->title       = $request->title;
-        $promotion->photo       = 'http://lorempixel.com/200/200/food/';
+        $promotion->photo       = 'http://lorempixel.com/640/480/food/';
         $promotion->description = $request->description;
         $promotion->price       = $request->price;
         $promotion->save();

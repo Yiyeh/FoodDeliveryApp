@@ -15,6 +15,7 @@
 				<th>E-Mail</th>
 				<th>Premium</th>
 				<th>Online</th>
+				<th>Type</th>
 				<th colspan="3">Opciones</th>
 			</tr>
 		</thead>
@@ -26,6 +27,7 @@
 				<td>{{$user->email}}</td>
 				<td>{{$user->premium}}</td>
 				<td>{{$user->online}}</td>
+				<td>{{$user->type}}</td>
 				<td>
 					<a href="{{ route('admin.user.show', $user->id) }}" class="btn  btn-primary">View</a>
 				</td>
