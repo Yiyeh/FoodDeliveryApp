@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="col-sm-11">
+<div class="col-sm-12">
 	<a href="{{ route('user.create') }}" class="btn  btn-primary pull-right">New User</a>
 	@include('flash::message')
 	<table class="table table-striped table-sm">

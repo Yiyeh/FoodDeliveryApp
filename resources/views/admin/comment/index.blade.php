@@ -5,7 +5,8 @@
 @section('content')
 
 <div class="col-sm-11">
-	<a href="#" class="btn  btn-primary pull-right">New Comment</a><hr>
+	<a href="{{ route('comment.create') }}" class="btn  btn-primary pull-right">New Comment</a><hr>
+	@include('flash::message')
 	<table class="table table-striped table-sm">
 		<thead>
 			<tr></tr>
@@ -21,7 +22,7 @@
 			@foreach ($comments as $comment)
 			<tr>
 				<td>{{$comment->id}}</td>
-				<td>{{$comment->user_id}}</td>
+				<td>{{$comment->user->name}}</td>
 				<td>{{$comment->delivery_id}}</td>
 				<td>{{$comment->comment}}</td>
 				<td>{{$comment->score}}</td>
@@ -31,9 +32,13 @@
 				<td>
 					<a href="{{ route('comment.edit', $comment->id) }}" class="btn  btn-warning">Edit</a>
 				</td>
-				<td>
-					<a href="{{ route('comment.destroy', $comment->id) }}" class="btn  btn-danger">Delete</a>
-				</td>
+				<td width="50px">	
+						<form action="{{ route('comment.destroy', $comment->id) }}" method="POST">
+							{{csrf_field()}}
+							<input type="hidden" name="_method" value="DELETE">
+							<button class="btn btn-danger">Delete</button>
+						</form>
+					</td>
 			</tr>		
 			@endforeach
 		</tbody>

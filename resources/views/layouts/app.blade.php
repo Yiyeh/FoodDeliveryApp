@@ -44,10 +44,10 @@
 
                     <ul class="nav navbar-nav">
                         <li class="nav-item ">
-                          <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
+                          <a class="nav-link" href="{{ url('/') }}">Inicio <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="/delivery">Delivery</a>
+                          <a class="nav-link" href="{{ url('/delivery') }}">Delivery</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="/noticias">Noticias</a>
@@ -66,7 +66,7 @@
                         @else
                             @if(Auth::user()->type == 'ADMIN')
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/admin/delivery">Administración</a>
+                                    <a class="nav-link" href="{{ url('/admin/delivery') }}">Administración</a>
                                 </li>
                             @endif
                             <li class="dropdown">

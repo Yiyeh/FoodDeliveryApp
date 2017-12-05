@@ -28,23 +28,23 @@ class User extends Authenticatable
     ];
 
     public function deliveries(){
-        $this->hasMany(Delivery::class);
+        return $this->hasMany(Delivery::class);
     }
 
     public function comments(){
-        $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class);
     }
 
     public function fanpages(){
-        $this->hasMany(Fanpage::class);
+        return $this->hasMany(Fanpage::class);
     }
 
     public function orders(){
-        $this->hasMany(Order::class);
+        return $this->hasMany(Order::class);
     }
 
     public function promotions(){
-        $this->hasMany(Promotion::class);
+        return $this->hasMany(Promotion::class);
     }
 
 

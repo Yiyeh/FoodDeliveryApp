@@ -4,8 +4,9 @@
 
 @section('content')
 
-<div class="col-sm-11">
-	<a href="#" class="btn  btn-primary pull-right">New Foodplace</a><hr>
+<div class="col-sm-12">
+	<a href="{{ route('delivery.create') }}" class="btn  btn-primary pull-right">New Delivery</a><hr>
+	@include('flash::message')
 	<table class="table  table-responsive table-striped table-sm">
 		<thead>
 			<tr></tr>

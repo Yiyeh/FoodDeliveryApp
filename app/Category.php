@@ -12,6 +12,6 @@ class Category extends Model
 
 
     public function deliveries(){
-    	$this->belongsToMany(Delivery::class);
+    	return $this->belongsToMany(Delivery::class);
     }
 }

@@ -33,8 +33,8 @@ class DeliveryAdminController extends Controller
      */
     public function create()
     {
-        $categories = Category::get();
-        return view('admin.delivery.create');
+        $categories = Category::pluck('name','id');
+        return view('admin.delivery.create',compact('categories'));
     }
 
     /**
@@ -45,8 +45,8 @@ class DeliveryAdminController extends Controller
      */
     public function store(Request $request)
     {
-        $delivery = new Deliver;
-        $delivery->user_id      = $request->user;
+        $delivery = new Delivery;
+        $delivery->user_id      = \Auth::user()->id;
         $delivery->category_id  = $request->category;
         $delivery->name         = $request->name;
         $delivery->slug         = str_slug($request->name);
@@ -54,7 +54,7 @@ class DeliveryAdminController extends Controller
         $delivery->body         = $request->body;
         $delivery->phone        = $request->phone;
         $delivery->sector       = $request->sector;
-        $delivery->logo         = 'http://lorempixel.com/200/200';
+        $delivery->logo         = 'http://lorempixel.com/200/200/food/';
         $delivery->fbPage       = $request->fbPage;
         $delivery->commune      = $request->commune;
         $delivery->city         = $request->city;
@@ -86,8 +86,9 @@ class DeliveryAdminController extends Controller
      */
     public function edit($id)
     {
+        $categories = Category::pluck('name','id');
         $delivery = Delivery::findOrFail($id);
-        return view('admin.delivery.edit',compact('delivery'));
+        return view('admin.delivery.edit',compact('delivery','categories'));
     }
 
     /**
@@ -101,6 +102,7 @@ class DeliveryAdminController extends Controller
     {
         $delivery = Delivery::findOrFail($id);
         $delivery->fill($request->all());
+        $delivery->logo         = 'http://lorempixel.com/200/200/food/';
         $delivery->save();
 
         flash('El delivery se ha modificado.')->warning();

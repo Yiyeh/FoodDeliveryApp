@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Laracast\Flash\Flash;
+use App\Delivery;
 use App\Comment;
 
 class CommentAdminController extends Controller
@@ -16,6 +18,10 @@ class CommentAdminController extends Controller
     public function index()
     {
         $comments = Comment::orderBy('id','DESC')->paginate();
+
+        $comments->each(function($comments){
+            $comments->user;
+        });
         return view('admin.comment.index', compact('comments'));
     }
 
@@ -26,7 +32,8 @@ class CommentAdminController extends Controller
      */
     public function create()
     {
-        //
+        $deliveries = Delivery::orderBy('name','ASC')->pluck('name','id');
+        return view('admin.comment.create',compact('deliveries'));
     }
 
     /**
@@ -37,7 +44,15 @@ class CommentAdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $comment = new Comment;
+        $comment->user_id = \Auth::user()->id;
+        $comment->delivery_id = $request->delivery;
+        $comment->comment     = $request->comment;
+        $comment->score       = $request->score;
+        $comment->save();
+
+        flash('Se ha creado el comentario con extito')->success();
+        return redirect()->route('comment.index');
     }
 
     /**
@@ -48,7 +63,8 @@ class CommentAdminController extends Controller
      */
     public function show($id)
     {
-        //
+        $comment = Comment::findOrFail($id);
+        return view('admin.comment.show','comment');
     }
 
     /**
@@ -59,7 +75,9 @@ class CommentAdminController extends Controller
      */
     public function edit($id)
     {
-        //
+        $comment = Comment::findOrFail($id);
+        $deliveries = Delivery::orderBy('name','ASC')->pluck('name','id');
+        return view('admin.comment.edit',compact('comment','deliveries'));
     }
 
     /**
@@ -71,7 +89,12 @@ class CommentAdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $comment = Comment::findOrFail($id);
+        $comment->fill($request->all());
+        $comment->save();
+
+        flash('El comentario se ha modificado con exito')->warning();
+        return redirect()->route('comment.index');
     }
 
     /**
@@ -82,6 +105,10 @@ class CommentAdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $comment = Comment::findOrFail($id);
+        $comment->delete();
+
+        flash('El comentario se ha eliminado con exito')->warning();
+        return redirect()->route('comment.index');
     }
 }

@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="/delivery">Ver Delivery</a>
+                    <a href="{{ url('/delivery') }}">Ver Delivery</a>
                     <a href="/categorias">Categorias</a>
                     <a href="/noticias">Noticias</a>
                     <a href="/premium">Premium</a>

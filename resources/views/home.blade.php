@@ -16,7 +16,7 @@
 
                     ¡Has Ingresado correctamente!
 
-                    <a href="/"> Volver al inicio.</a>
+                    <a href="{{url('/')}}"> Volver al inicio.</a>
                 </div>
             </div>
         </div>
