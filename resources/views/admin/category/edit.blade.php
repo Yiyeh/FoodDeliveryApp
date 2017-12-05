@@ -9,11 +9,11 @@
 <div class="container">
 
 	<div class="col-sm-11">
-		<a href="{{route('category.index')}}" class="btn  btn-info pull-right">Show List</a> <br><br><br>
+		<a href="{{route('admin.category.index')}}" class="btn  btn-info pull-right">Show List</a> <br><br><br>
 
 		@include('admin.partials.errors')
 	
-		{!! Form::model($category, ['route' => ['category.update', $category->id], 'method' => 'PUT']) !!}
+		{!! Form::model($category, ['route' => ['admin.category.update', $category->id], 'method' => 'PUT']) !!}
 	
 		<div class="form-group">
 			{!! Form::label('name', 'Nombre', ['class' => 'pull-left']) !!}

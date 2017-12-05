@@ -48,7 +48,7 @@ class UserAdminController extends Controller
         $user->save();
 
         flash('El Usuario se ha creado con exito')->success();
-        return redirect()->route('user.index');
+        return redirect()->route('admin.user.index');
     }
 
     /**
@@ -89,7 +89,7 @@ class UserAdminController extends Controller
         $user->premium = $request->premium;
         $user->save();
         flash('El usuario se ha modificado')->warning();
-        return redirect()->route('user.index');
+        return redirect()->route('admin.user.index');
     }
 
     /**
@@ -102,7 +102,7 @@ class UserAdminController extends Controller
     {
         $user = User::findOrFail($id);
         $user->delete();
-        flash('El usuario se ha eliminado')->warning();
-        return redirect()->route('user.index');
+        flash('El usuario se ha eliminado')->erroe();
+        return redirect()->route('admin.user.index');
     }
 }

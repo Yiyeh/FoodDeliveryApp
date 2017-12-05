@@ -24,13 +24,13 @@
 				<td>{{$fanpage->delivery_id}}</td>
 				<td>{{$fanpage->url}}</td>
 				<td>
-					<a href="{{ route('fanpage.show', $fanpage->id) }}" class="btn  btn-primary">View</a>
+					<a href="{{ route('admin.fanpage.show', $fanpage->id) }}" class="btn  btn-primary">View</a>
 				</td>
 				<td>
-					<a href="{{ route('fanpage.edit', $fanpage->id) }}" class="btn  btn-warning">Edit</a>
+					<a href="{{ route('admin.fanpage.edit', $fanpage->id) }}" class="btn  btn-warning">Edit</a>
 				</td>
 				<td>
-					<a href="{{ route('fanpage.destroy', $fanpage->id) }}" class="btn  btn-danger">Delete</a>
+					<a href="{{ route('admin.fanpage.destroy', $fanpage->id) }}" class="btn  btn-danger">Delete</a>
 				</td>
 			</tr>		
 			@endforeach

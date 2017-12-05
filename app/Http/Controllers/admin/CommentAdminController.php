@@ -52,7 +52,7 @@ class CommentAdminController extends Controller
         $comment->save();
 
         flash('Se ha creado el comentario con extito')->success();
-        return redirect()->route('comment.index');
+        return redirect()->route('admin.comment.index');
     }
 
     /**
@@ -94,7 +94,7 @@ class CommentAdminController extends Controller
         $comment->save();
 
         flash('El comentario se ha modificado con exito')->warning();
-        return redirect()->route('comment.index');
+        return redirect()->route('admin.comment.index');
     }
 
     /**
@@ -108,7 +108,7 @@ class CommentAdminController extends Controller
         $comment = Comment::findOrFail($id);
         $comment->delete();
 
-        flash('El comentario se ha eliminado con exito')->warning();
-        return redirect()->route('comment.index');
+        flash('El comentario se ha eliminado con exito')->error();
+        return redirect()->route('admin.comment.index');
     }
 }

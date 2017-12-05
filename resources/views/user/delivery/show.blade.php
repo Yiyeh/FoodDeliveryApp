@@ -121,6 +121,9 @@
 
 				@endif
 
+
+				@if (Auth::user()) <!-- Mostrar comentarios si el usuario esta logueado -->
+
 				<div class="panel panel-default">
 				  	<div class="panel-heading">
 				    	<h3 class="panel-title">Dejar Recomendación</h3>
@@ -149,6 +152,8 @@
 						</form>	
 					</div>
 				</div>
+
+				@endif
 				
 			</div> <!-- col-sm-9 -->
 		</div><!-- row -->

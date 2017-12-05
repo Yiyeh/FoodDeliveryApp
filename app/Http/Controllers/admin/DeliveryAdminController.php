@@ -63,7 +63,7 @@ class DeliveryAdminController extends Controller
         $delivery->save();
 
         flash('El delivery se ha creado.')->success();
-        return redirect()->route('delivery.index');
+        return redirect()->route('admin.delivery.index');
     }
 
     /**
@@ -106,7 +106,7 @@ class DeliveryAdminController extends Controller
         $delivery->save();
 
         flash('El delivery se ha modificado.')->warning();
-        return redirect()->route('delivery.index');
+        return redirect()->route('admin.delivery.index');
 
     }
 
@@ -121,7 +121,7 @@ class DeliveryAdminController extends Controller
         $delivery = Delivery::findOrFail($id);
         $delivery->delete();
 
-        flash('El delivery ha sido eliminado')->warning();
-        return redirect()->route('delivery.index');
+        flash('El delivery ha sido eliminado')->error();
+        return redirect()->route('admin.delivery.index');
     }
 }

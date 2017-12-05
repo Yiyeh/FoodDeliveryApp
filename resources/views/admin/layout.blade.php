@@ -47,25 +47,25 @@
 			    			<a class="nav-link" href="{{ url('/') }}">View Site</a>
 			      		</li>
 					  	<li class="nav-item">
-			    			<a class="nav-link" href="{{ route('user.index') }}">Users</a>
+			    			<a class="nav-link" href="{{ route('admin.user.index') }}">Users</a>
 			      		</li>
 			      		<li class="nav-item">
-			    			<a class="nav-link" href="{{ route('delivery.index') }}">Deliveries</a>
+			    			<a class="nav-link" href="{{ route('admin.delivery.index') }}">Deliveries</a>
 			      		</li>
 			      		<li class="nav-item">
-			        		<a class="nav-link" href="{{ route('category.index') }}">Categories</a>
+			        		<a class="nav-link" href="{{ route('admin.category.index') }}">Categories</a>
 			      		</li>
 			      		<li class="nav-item">
-			        		<a class="nav-link" href="{{ route('order.index') }}">Orders</a>
+			        		<a class="nav-link" href="{{ route('admin.order.index') }}">Orders</a>
 			      		</li>
 			      		<li class="nav-item">
-			        		<a class="nav-link" href="{{ route('comment.index') }}">Comments</a>
+			        		<a class="nav-link" href="{{ route('admin.comment.index') }}">Comments</a>
 			      		</li>
 			      		<li class="nav-item">
-			        		<a class="nav-link" href="{{ route('fanpage.index') }}">Fan Pages</a>
+			        		<a class="nav-link" href="{{ route('admin.fanpage.index') }}">Fan Pages</a>
 			      		</li>
 			      		<li class="nav-item">
-			        		<a class="nav-link" href="{{ route('promotion.index') }}">Promotions</a>
+			        		<a class="nav-link" href="{{ route('admin.promotion.index') }}">Promotions</a>
 			      		</li>
 		      		</ul>
                     <!-- Right Side Of Navbar -->
@@ -77,7 +77,7 @@
                         @else
                             @if(Auth::user()->type == 'ADMIN')
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/admin/delivery') }}">Administración</a>
+                                    <a class="nav-link" href="{{ route('admin.delivery.index') }}">Administración</a>
                                 </li>
                             @endif
                             <li class="dropdown">
@@ -87,6 +87,9 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                    <li> 
+                                        <a href="{{url('/misdeliveries')}}">Mis Deliveries</a> 
+                                    </li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();

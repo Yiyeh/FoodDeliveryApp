@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="col-sm-11">
-	<a href="{{ route('comment.create') }}" class="btn  btn-primary pull-right">New Comment</a><hr>
+	<a href="{{ route('admin.comment.create') }}" class="btn  btn-primary pull-right">New Comment</a><hr>
 	@include('flash::message')
 	<table class="table table-striped table-sm">
 		<thead>
@@ -27,13 +27,13 @@
 				<td>{{$comment->comment}}</td>
 				<td>{{$comment->score}}</td>
 				<td>
-					<a href="{{ route('comment.show', $comment->id) }}" class="btn  btn-primary">View</a>
+					<a href="{{ route('admin.comment.show', $comment->id) }}" class="btn  btn-primary">View</a>
 				</td>
 				<td>
-					<a href="{{ route('comment.edit', $comment->id) }}" class="btn  btn-warning">Edit</a>
+					<a href="{{ route('admin.comment.edit', $comment->id) }}" class="btn  btn-warning">Edit</a>
 				</td>
 				<td width="50px">	
-						<form action="{{ route('comment.destroy', $comment->id) }}" method="POST">
+						<form action="{{ route('admin.comment.destroy', $comment->id) }}" method="POST">
 							{{csrf_field()}}
 							<input type="hidden" name="_method" value="DELETE">
 							<button class="btn btn-danger">Delete</button>

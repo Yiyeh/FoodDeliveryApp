@@ -9,11 +9,11 @@
 <div class="container">
 
 	<div class="col-sm-11">
-		<a href="{{route('user.index')}}" class="btn  btn-info pull-right">Show List</a> <br><br><br>
+		<a href="{{route('admin.user.index')}}" class="btn  btn-info pull-right">Show List</a> <br><br><br>
 
 		@include('admin.partials.errors')
 	
-		{!! Form::model($user, ['route' => ['user.update',$user->id], 'method' => 'PUT']) !!}
+		{!! Form::model($user, ['route' => ['admin.user.update',$user->id], 'method' => 'PUT']) !!}
 	
 		<div class="form-group">
 			{!! Form::label('name', 'Nombre', ['class' => 'pull-left']) !!}

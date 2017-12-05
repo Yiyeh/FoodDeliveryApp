@@ -9,11 +9,11 @@
 <div class="container">
 
 	<div class="col-sm-11">
-		<a href="{{route('comment.index')}}" class="btn  btn-info pull-right">Show List</a> <br><br><br>
+		<a href="{{route('admin.comment.index')}}" class="btn  btn-info pull-right">Show List</a> <br><br><br>
 
 		@include('admin.partials.errors')
 	
-		{!! Form::model($comment, ['route' => ['comment.update', $comment->id], 'method' => 'PUT']) !!}
+		{!! Form::model($comment, ['route' => ['admin.comment.update', $comment->id], 'method' => 'PUT']) !!}
 	
 		<div class="form-group">
 			{!! Form::label('delivery', 'Delivery', ['class' => 'pull-left']) !!}

@@ -48,7 +48,7 @@ class CategoryAdminController extends Controller
 
         flash('La Categoria Fue Creada')->success();
 
-        return redirect()->route('category.index');
+        return redirect()->route('admin.category.index');
     }
 
     /**
@@ -93,7 +93,7 @@ class CategoryAdminController extends Controller
 
         flash('La Categoria Fue Modificada')->success();
 
-        return redirect()->route('category.index');
+        return redirect()->route('admin.category.index');
         }
 
     /**
@@ -107,7 +107,7 @@ class CategoryAdminController extends Controller
         $category = Category::findOrFail($id);
         
         $category->delete();
-        flash('La Categoria Fue Eliminada')->success();
+        flash('La Categoria Fue Eliminada')->error();
         return back();
 
     }

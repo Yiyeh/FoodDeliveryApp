@@ -1,23 +1,22 @@
 @extends('admin.layout')
 
-@section('title','Create Delivery')
+@section('title','Editar Delivery')
 
-@section('action','- Create Delivery')
+@section('action','- Editar Delivery')
 
 @section('content')
 
 <div class="container">
 
 	<div class="col-sm-11">
-		<a href="{{route('admin.delivery.index')}}" class="btn  btn-info pull-right">Show List</a> <br><br><br>
-
+		<a href="{{route('user.delivery.mydelivery')}}" class="btn  btn-info pull-right">Ver mis deliveries</a> <br><br><br>
 		@include('admin.partials.errors')
 	
-		{!! Form::open(['route' => ['admin.delivery.store']]) !!}
+		{!! Form::open(['route' => ['user.delivery.store']]) !!}
 	
 		<div class="form-group">
 			{!! Form::label('category', 'Categoria', ['class' => 'pull-left']) !!}
-			{!! Form::select('category', $categories,null, [ 'class' => 'form-control', 'placeholder' => 'Elija una categoria']) !!}	
+			{!! Form::select('category', $categories, null, [ 'class' => 'form-control', 'placeholder' => 'Elija una categoria']) !!}	
 		</div>
 
 		<div class="form-group">
@@ -65,15 +64,11 @@
 			{!! Form::text('city', null, ['class' => 'form-control', 'placeholder' => 'Ciudad']) !!}
 		</div>
 
-		<div class="form-group">
-				{!! Form::label('premium','Premium', ['class' => 'pull-left']) !!}
-				{!! Form::select('premium', ['TRUE' => 'Si','FALSE' =>'No'],null, ['class' => 'form-control', 'placeholder' => 'Seleccione un tipo']) !!}
-			</div>
 
-			<div class="form-group">
-				{!! Form::label('published','Tipo', ['class' => 'pull-left']) !!}
-				{!! Form::select('published', ['DRAFT' => 'Oculto','PUBLISHED' =>'Publicado'],null, ['class' => 'form-control', 'placeholder' => 'Seleccione un tipo']) !!}
-			</div>
+		<div class="form-group">
+			{!! Form::label('published','Tipo', ['class' => 'pull-left']) !!}
+			{!! Form::select('published', ['DRAFT' => 'Oculto','PUBLISHED' =>'Publicado'],null, ['class' => 'form-control', 'placeholder' => 'Seleccione un tipo']) !!}
+		</div>
 	
 		<div class="form-group">
 			{!! Form::submit('Enviar', [ 'class' => 'btn btn-primary']) !!}	

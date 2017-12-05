@@ -9,11 +9,11 @@
 <div class="container">
 
 	<div class="col-sm-11">
-		<a href="{{route('promotion.index')}}" class="btn  btn-info pull-right">Show List</a> <br><br><br>
+		<a href="{{route('admin.promotion.index')}}" class="btn  btn-info pull-right">Show List</a> <br><br><br>
 
 		@include('admin.partials.errors')
 	
-		{!! Form::open(['route' => ['promotion.store']]) !!}
+		{!! Form::open(['route' => ['admin.promotion.store']]) !!}
 	
 		<div class="form-group">
 			{!! Form::label('delivery', 'Delivery', ['class' => 'pull-left']) !!}

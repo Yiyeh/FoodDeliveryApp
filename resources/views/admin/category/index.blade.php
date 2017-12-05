@@ -7,7 +7,7 @@
 @section('content')
 
 <div class="col-sm-11">
-	<a href="{{route('category.create')}}" class="btn  btn-primary pull-right">New Category</a><hr>
+	<a href="{{route('admin.category.create')}}" class="btn  btn-primary pull-right">New Category</a><hr>
 	@include('flash::message')
 	<table class="table table-striped table-sm">
 		<thead>
@@ -25,10 +25,10 @@
 					<td>{{$category->name}}</td>
 					<td>{{$category->slug}}</td>
 					<td width="50px">	
-						<a href="{{ route('category.edit', $category->id) }}" class="btn btn-warning">Edit</a>
+						<a href="{{ route('admin.category.edit', $category->id) }}" class="btn btn-warning">Edit</a>
 					</td>	
 					<td width="50px">	
-						<form action="{{ route('category.destroy', $category->id) }}" method="POST">
+						<form action="{{ route('admin.category.destroy', $category->id) }}" method="POST">
 							{{csrf_field()}}
 							<input type="hidden" name="_method" value="DELETE">
 							<button class="btn btn-danger">Delete</button>

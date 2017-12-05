@@ -55,7 +55,7 @@ class PromotionAdminController extends Controller
         $promotion->save();
 
         Flash('La promoción se guardo con exito');
-        return redirect()->route('promotion.index');
+        return redirect()->route('admin.promotion.index');
     }
 
     /**
@@ -67,7 +67,7 @@ class PromotionAdminController extends Controller
     public function show($id)
     {
         $promotion = Promotion::findOrFail($id);
-        return view('promotion.show', compact('promotion'));
+        return view('admin.promotion.show', compact('promotion'));
     }
 
     /**
@@ -99,7 +99,7 @@ class PromotionAdminController extends Controller
         $promotion->save();
 
         Flash('La promocion se ha modificado con exito')->warning();
-        return redirect()->route('promotion.index');
+        return redirect()->route('admin.promotion.index');
     }
 
     /**
@@ -113,7 +113,7 @@ class PromotionAdminController extends Controller
         $promotion = Promotion::findOrFail($id);
         $promotion->delete();
 
-        Flash('La Promocion se elimino con exito')->warning();
-        return redirect()->route('promotion.index');
+        Flash('La Promocion se elimino con exito')->error();
+        return redirect()->route('admin.promotion.index');
     }
 }

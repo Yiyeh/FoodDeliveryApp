@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="col-sm-12">
-	<a href="{{ route('delivery.create') }}" class="btn  btn-primary pull-right">New Delivery</a><hr>
+	<a href="{{ route('admin.delivery.create') }}" class="btn  btn-primary pull-right">New Delivery</a><hr>
 	@include('flash::message')
 	<table class="table  table-responsive table-striped table-sm">
 		<thead>
@@ -39,13 +39,13 @@
 				<td>{{$delivery->premium}}</td>
 				<td>{{$delivery->published}}</td>
 				<td>
-					<a href="{{ route('delivery.show', $delivery->id) }}" class="btn  btn-primary">View</a>
+					<a href="{{ route('admin.delivery.show', $delivery->id) }}" class="btn  btn-primary">View</a>
 				</td>
 				<td>
-					<a href="{{ route('delivery.edit', $delivery->id) }}" class="btn  btn-warning">Edit</a>
+					<a href="{{ route('admin.delivery.edit', $delivery->id) }}" class="btn  btn-warning">Edit</a>
 				</td>
 				<td>
-					<form action="{{ route('delivery.destroy', $delivery->id) }}" method="POST">
+					<form action="{{ route('admin.delivery.destroy', $delivery->id) }}" method="POST">
 						{{csrf_field()}}
 						<input type="hidden" name="_method" value="DELETE">
 						<button class="btn btn-danger">Delete</button>
