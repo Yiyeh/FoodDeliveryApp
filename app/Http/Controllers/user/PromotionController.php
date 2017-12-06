@@ -9,11 +9,7 @@ use App\Delivery;
 
 class PromotionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
         $promotions = Promotion::orderBy('id','DESC')->where('user_id', \Auth::user()->id)->paginate();
@@ -23,24 +19,13 @@ class PromotionController extends Controller
         return view('user.promotion.index', compact('promotions'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $deliveries = Delivery::orderBy('name')->where('user_id', \Auth::user()->id)->pluck('name','id');
 
         return view('user.promotion.create',compact('deliveries'));
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function store(Request $request)
     {
         $promotion = new Promotion;
@@ -56,23 +41,6 @@ class PromotionController extends Controller
         return redirect()->route('user.promotion.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $deliveries = Delivery::orderBy('name')->where('user_id', \Auth::user()->id)->pluck('name','id');
@@ -81,13 +49,6 @@ class PromotionController extends Controller
         return view('user.promotion.edit', compact('promotion','deliveries'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $promotion = Promotion::findOrFail($id);
@@ -99,12 +60,6 @@ class PromotionController extends Controller
         return redirect()->route('user.promotion.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $promotion = Promotion::findOrFail($id);

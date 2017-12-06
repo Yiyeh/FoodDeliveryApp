@@ -49,7 +49,7 @@
                           <a class="nav-link" href="{{ url('/') }}">Inicio <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="{{ url('/delivery') }}">Delivery</a>
+                          <a class="nav-link" href="{{ route('guest.delivery.list') }}">Delivery</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="/noticias">Noticias</a>

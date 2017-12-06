@@ -39,7 +39,7 @@
 							<td>{{$delivery->city}}</td>
 							<td>{{$delivery->published}}</td>
 							<td>
-								<a href="{{ url('delivery', $delivery->id) }}" class="btn  btn-primary">Ver</a>
+								<a href="{{ route('guest.delivery.show', $delivery->id) }}" class="btn  btn-primary">Ver</a>
 							</td>
 							<td>
 								<a href="{{ route('user.delivery.edit', $delivery->id) }}" class="btn  btn-warning">Editar</a>

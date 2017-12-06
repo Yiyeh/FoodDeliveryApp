@@ -33,7 +33,7 @@
 							<td>{{$promotion->description}}</td>
 							<td>{{$promotion->price}}</td>
 							<td>
-								<a href="{{ route('user.delivery.show', $promotion->delivery->id) }}" class="btn  btn-primary">Ver</a>
+								<a href="{{ route('guest.delivery.show', $promotion->delivery->id) }}" class="btn  btn-primary">Ver</a>
 							</td>
 							<td>
 								<a href="{{ route('user.promotion.edit', $promotion->id) }}" class="btn  btn-warning">Editar</a>

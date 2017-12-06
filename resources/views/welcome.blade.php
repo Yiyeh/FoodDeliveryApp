@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{ route('user.delivery.index') }}">Ver Delivery</a>
+                    <a href="{{ route('guest.delivery.list') }}">Ver Delivery</a>
                     <a href="/categorias">Categorias</a>
                     <a href="/noticias">Noticias</a>
                     <a href="/premium">Premium</a>

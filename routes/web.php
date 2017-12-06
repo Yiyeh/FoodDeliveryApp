@@ -15,27 +15,39 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Delivery
-Route::resource('delivery' , 'user\DeliveryController', ['as' => 'user']);
-Route::get('/mydelivery' , ['as' => 'user.delivery.mydelivery', 'uses' => 'user\DeliveryController@MyDelivery']);
+// Guest
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/d/list', ['as' => 'guest.delivery.list', 'uses' => 'guest\GuestController@deliveryIndex']);
+Route::get('/d/{id}', ['as' => 'guest.delivery.show', 'uses' => 'guest\GuestController@deliveryShow']);
+Route::get('/c/{id}', ['as' => 'guest.category.show', 'uses' => 'guest\GuestController@categoryShow']);
 
 
-Route::resource('category' , 'user\CategoryController', ['as' => 'user']);
-Route::resource('comment' , 'user\CommentController', ['as' => 'user']);
-Route::resource('promotion' , 'user\PromotionController', ['as' => 'user']);
+// User
+Route::prefix('user')->name('user.')->group(function () { 
+	Route::get('d' , [
+		'as' 	=> 'delivery.mydelivery', 
+		'uses' 	=> 'user\DeliveryController@MyDelivery'
+	]);
 
-//Admin Panel
-Route::prefix('admin')->group(function () {  
-	Route::resource('delivery' , 'admin\DeliveryAdminController', ['as' => 'admin']);
-	Route::resource('category' , 'admin\CategoryAdminController', ['as' => 'admin']);
-	Route::resource('user' , 'admin\UserAdminController', ['as' => 'admin']);
-	Route::resource('order' , 'admin\OrderAdminController', ['as' => 'admin']);
-	Route::resource('comment' , 'admin\CommentAdminController', ['as' => 'admin']);
-	Route::resource('fanpage' , 'admin\FanPageAdminController', ['as' => 'admin']);
-	Route::resource('promotion' , 'admin\PromotionAdminController', ['as' => 'admin']);
+	Route::resource('delivery' , 'user\DeliveryController');
+	Route::resource('comment' , 'user\CommentController');
+	Route::resource('promotion' , 'user\PromotionController');
+	
+});
+
+
+// Admin 
+Route::prefix('admin')->name('admin.')->group(function () {  
+	Route::resource('delivery' , 'admin\DeliveryAdminController');
+	Route::resource('category' , 'admin\CategoryAdminController');
+	Route::resource('user' , 'admin\UserAdminController');
+	Route::resource('order' , 'admin\OrderAdminController');
+	Route::resource('comment' , 'admin\CommentAdminController');
+	Route::resource('fanpage' , 'admin\FanPageAdminController');
+	Route::resource('promotion' , 'admin\PromotionAdminController');
 	
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
