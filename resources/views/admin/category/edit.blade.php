@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('layouts.admin')
 
 @section('title','Edit Category')
 
@@ -11,7 +11,7 @@
 	<div class="col-sm-11">
 		<a href="{{route('admin.category.index')}}" class="btn  btn-info pull-right">Show List</a> <br><br><br>
 
-		@include('admin.partials.errors')
+		@include('layouts._errors')
 	
 		{!! Form::model($category, ['route' => ['admin.category.update', $category->id], 'method' => 'PUT']) !!}
 	

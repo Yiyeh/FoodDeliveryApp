@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('layouts.admin')
 
 @section('title','Create Comment')
 
@@ -11,7 +11,7 @@
 	<div class="col-sm-11">
 		<a href="{{route('admin.comment.index')}}" class="btn  btn-info pull-right">Show List</a> <br><br><br>
 
-		@include('admin.partials.errors')
+		@include('layouts._errors')
 	
 		{!! Form::open(['route' => ['admin.comment.store']]) !!}
 	
