@@ -1,1 +1,0 @@
-proyecto con proposito de aprendizaje

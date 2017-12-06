@@ -11,9 +11,11 @@
     <title>{{ config('app.name', 'FoodApp') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('css/bootstrap3.css')}}" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{asset('css/toastr.css')}}" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/custom.css')}}" crossorigin="anonymous">
 </head>
 <body>
@@ -66,7 +68,7 @@
                         @else
                             @if(Auth::user()->type == 'ADMIN')
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/admin/delivery') }}">Administración</a>
+                                    <a class="nav-link" href="{{ route('admin.delivery.index') }}">Administración</a>
                                 </li>
                             @endif
                             <li class="dropdown">
@@ -105,10 +107,12 @@
     </div>
 
     <!-- Scripts -->
-        <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="{{ asset('js/bootstrap3.js') }}"></script>
     <script src="{{ asset('js/toastr.js') }}"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+    </script>
 </body>
 </html>

@@ -103,7 +103,7 @@ class UserAdminController extends Controller
     {
         $user = User::findOrFail($id);
         $user->delete();
-        flash('El usuario se ha eliminado')->erroe();
+        flash('El usuario se ha eliminado')->error();
         return redirect()->route('admin.user.index');
     }
 }
