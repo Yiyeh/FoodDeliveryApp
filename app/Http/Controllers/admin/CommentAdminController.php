@@ -51,7 +51,7 @@ class CommentAdminController extends Controller
         $comment->score       = $request->score;
         $comment->save();
 
-        flash('Se ha creado el comentario con extito')->success();
+        flash('Se ha creado el comentario con éxito')->success();
         return redirect()->route('admin.comment.index');
     }
 
@@ -108,7 +108,7 @@ class CommentAdminController extends Controller
         $comment = Comment::findOrFail($id);
         $comment->delete();
 
-        flash('El comentario se ha eliminado con exito')->error();
+        flash('El comentario se ha eliminado con éxito')->error();
         return redirect()->route('admin.comment.index');
     }
 }

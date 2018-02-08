@@ -23,7 +23,7 @@ Route::get('/c/{id}', ['as' => 'guest.category.show', 'uses' => 'guest\GuestCont
 
 
 // User
-Route::prefix('user')->name('user.')->group(function () { 
+Route::prefix('user')->name('user.')->middleware('auth')->group(function () { 
 	Route::get('d' , [
 		'as' 	=> 'delivery.mydelivery', 
 		'uses' 	=> 'user\DeliveryController@MyDelivery'
@@ -37,7 +37,7 @@ Route::prefix('user')->name('user.')->group(function () {
 
 
 // Admin 
-Route::prefix('admin')->name('admin.')->group(function () {  
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {  
 	Route::resource('delivery' , 'admin\DeliveryAdminController');
 	Route::resource('category' , 'admin\CategoryAdminController');
 	Route::resource('user' , 'admin\UserAdminController');

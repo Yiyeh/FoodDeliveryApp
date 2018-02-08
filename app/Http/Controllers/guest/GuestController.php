@@ -14,7 +14,7 @@ class GuestController extends Controller
 {
     public function deliveryindex()
     {
-        $deliveries = Delivery::orderBy('id','DESC')->where('published','PUBLISHED')->paginate();
+        $deliveries = Delivery::orderBy('id','DESC')->where('published','PUBLISHED')->paginate(10);
         $categories = Category::orderBy('name','ASC')->get();
         $cities = Delivery::distinct()->select('city')->get();
 

@@ -38,7 +38,7 @@ $factory->define(App\Delivery::class, function (Faker\Generator $faker) {
 
     $name = $faker->sentence(2);
     return [
-    	'user_id'	=> $faker->numberBetween($min = 1, $max = 10),
+    	'user_id'	=> $faker->numberBetween($min = 1, $max = 30),
     	'category_id'	=> $faker->numberBetween($min = 1, $max = 10),
         'name'      => $name,
         'slug'      => str_slug($name),
@@ -59,8 +59,8 @@ $factory->define(App\Delivery::class, function (Faker\Generator $faker) {
 $factory->define(App\Order::class, function (Faker\Generator $faker) {
 
     return [
-    	'user_id'	     => $faker->numberBetween($min = 1, $max = 10),
-        'delivery_id'   => $faker->numberBetween($min = 1, $max = 10),
+    	'user_id'	     => $faker->numberBetween($min = 1, $max = 30),
+        'delivery_id'   => $faker->numberBetween($min = 1, $max = 50),
         'body' 		     => $faker->realText($maxNbChars = 150, $indexSize = 2),  
         'phone'		     => $faker->e164PhoneNumber,
         'address' 	     => $faker->streetAddress,
@@ -73,7 +73,7 @@ $factory->define(App\Comment::class, function (Faker\Generator $faker) {
 
     return [
         'user_id'        => $faker->numberBetween($min = 1, $max = 30),
-        'delivery_id'    => $faker->numberBetween($min = 1, $max = 30),
+        'delivery_id'    => $faker->numberBetween($min = 1, $max = 50),
         'comment'        => $faker->realText($maxNbChars = 150, $indexSize = 2),  
         'score'          => $faker->numberBetween($min = 1, $max = 5),
     ];
@@ -82,8 +82,8 @@ $factory->define(App\Comment::class, function (Faker\Generator $faker) {
 $factory->define(App\FanPage::class, function (Faker\Generator $faker) {
 
     return [
-        'user_id'       => $faker->numberBetween($min = 1, $max = 10),
-        'delivery_id'  => $faker->numberBetween($min = 1, $max = 10),
+        'user_id'       => $faker->numberBetween($min = 1, $max = 30),
+        'delivery_id'  => $faker->numberBetween($min = 1, $max = 50),
         'url'           => "http://Facebook.com/nowaycl",  
 
     ];
@@ -92,8 +92,8 @@ $factory->define(App\FanPage::class, function (Faker\Generator $faker) {
 $factory->define(App\Promotion::class, function (Faker\Generator $faker) {
 
     return [
-        'user_id'       => $faker->numberBetween($min = 1, $max = 10),
-        'delivery_id'  => $faker->numberBetween($min = 1, $max = 30),
+        'user_id'       => $faker->numberBetween($min = 1, $max = 30),
+        'delivery_id'  => $faker->numberBetween($min = 1, $max = 50),
         'title'         => $faker->company,
         'photo'         => $faker->imageUrl($width = 640, $height = 480, 'food'),
         'description'   => $faker->realText($maxNbChars = 150, $indexSize = 2),
@@ -102,3 +102,12 @@ $factory->define(App\Promotion::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Ordercomment::class, function (Faker\Generator $faker){
+
+    return [
+        'user_id'       => $faker->numberBetween($min = 1, $max = 30),
+        'order_id'      => $faker->numberBetween($min = 1, $max = 50),
+        'body'          => $faker->realText($maxNbChars = 150, $indexSize = 2),
+    ];
+
+});

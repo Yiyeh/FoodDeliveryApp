@@ -9,15 +9,15 @@
 <div class="container">
 
 	<div class="col-sm-11">
-		<a href="{{url('/mydelivery')}}" class="btn  btn-info pull-right">Ver mis deliveries</a> <br><br><br>
+		<a href="{{url('/mydelivery')}}" class="btn  btn-info pull-right">Ver mis Deliveries</a> <br><br><br>
 
-		@include('admin.partials.errors')
+		@include('layouts._errors')
 	
 		{!! Form::model($delivery, ['route' => ['user.delivery.update', $delivery->id], 'method' => 'PUT' ]) !!}
 	
 		<div class="form-group">
 			{!! Form::label('category', 'Categoria', ['class' => 'pull-left']) !!}
-			{!! Form::select('category', $categories, null, [ 'class' => 'form-control', 'placeholder' => 'Elija una categoria']) !!}	
+			{!! Form::select('category', $categories, null, [ 'class' => 'form-control', 'placeholder' => 'Elija una categoría']) !!}	
 		</div>
 
 		<div class="form-group">

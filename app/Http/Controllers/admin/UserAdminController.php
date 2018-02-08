@@ -47,7 +47,7 @@ class UserAdminController extends Controller
         $user->type     = $request->type;
         $user->save();
 
-        flash('El Usuario se ha creado con exito')->success();
+        flash('El Usuario se ha creado con éxito')->success();
         return redirect()->route('admin.user.index');
     }
 

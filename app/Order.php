@@ -18,4 +18,8 @@ class Order extends Model
     public function delivery(){
     	return $this->belongsTo(Delivery::class);
     }
+
+    public function ordercomments(){
+    	return $this->hasMany(Ordercomment::class);
+    }
 }

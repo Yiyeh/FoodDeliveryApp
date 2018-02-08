@@ -12,7 +12,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        Foodapp
+                        {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
 

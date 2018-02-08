@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CommentTableSeeder::class);
         $this->call(FanPageTableSeeder::class);
         $this->call(PromotionTableSeeder::class);
+        $this->call(OrdercommentTableSeeder::class);
     }
 }

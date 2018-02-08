@@ -9,8 +9,8 @@
 <div class="container">
 
 	<div class="col-sm-11">
-		<a href="{{route('user.delivery.mydelivery')}}" class="btn  btn-info pull-right">Ver mis deliveries</a> <br><br><br>
-		@include('admin.partials.errors')
+		<a href="{{route('user.delivery.mydelivery')}}" class="btn  btn-info pull-right">Ver mis Deliveries</a> <br><br><br>
+		@include('layouts._errors')
 	
 		{!! Form::open(['route' => ['user.delivery.store']]) !!}
 	

@@ -11,7 +11,7 @@
 	<div class="col-sm-11">
 		<a href="{{route('user.promotion.index')}}" class="btn  btn-info pull-right">Ver Promociones</a> <br><br><br>
 
-		@include('admin.partials.errors')
+		@include('layouts._errors')
 	
 		{!! Form::open(['route' => ['user.promotion.store']]) !!}
 	

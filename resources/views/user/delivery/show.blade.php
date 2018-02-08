@@ -8,6 +8,11 @@
 	<div class="container">
 
 		<div class="row">
+			<ol class="breadcrumb">
+			  <li><a href="{{url('/')}}">Inicio</a></li>
+			  <li class="active"><a href="{{route('guest.delivery.list')}}">Deliveries</a></li>
+			  <li class="active">Delivery</li>
+			</ol>
 
 			<!-- div lateral Categorias -->
 			@include('layouts._categoryNav')
@@ -17,26 +22,36 @@
 
 			
 			<div class="col-sm-9">
-
 				<div class="row">
 					<div class="panel panel-default">
 					  	<div class="panel-heading">
-					    	<h1 class="panel-title">Información:</h1>
+					    	<h1 class="panel-title">Información:
+					    	
+					    	@if(Auth::user())
+
+						    	@if (Auth::user()->id == $delivery->user_id || Auth::user()->type == 'ADMIN')
+									<a href="{{ route('user.delivery.edit', $delivery->id) }}" class="btn btn-xs btn-default pull-right" >Editar Delivery</a>
+						    	@endif
+
+					    	@endif
+					    	</h1>
+
 					  	</div>
 					  	<div class="panel-body">
 					  		<center><h2 class="page-header">{{$delivery->name}}</h2></center>
-					  		<div class="col-sm-12">
+					  		<div class="col-sm-6">
 							<center><img class="img-thumbnail" src="{{$delivery->logo}}" width="80%"></center><br>
 						</div>
-						<div class="col-sm-6"><p class="text-justify lead">{{$delivery->short}}</p></div>
 						<div class="col-sm-6">
 							<div class="well">
 								<p class="text-right"><i class="fa fa-map-marker" aria-hidden="true"></i>  Ciudad: {{$delivery->city}}</p>
 								<p class="text-right"><i class="fa fa-map-signs" aria-hidden="true"></i>  Comuna: {{$delivery->commune}}</p>
-								<p class="text-right"><i class="fa fa-phone" aria-hidden="true"></i>  Telefono: {{$delivery->phone}}</p>
+								<p class="text-right"><i class="fa fa-phone" aria-hidden="true"></i>  Teléfono: {{$delivery->phone}}</p>
 								<p class="text-right"><i class="fa fa-truck" aria-hidden="true"></i>  Sector de reparto: {{$delivery->sector}}</p>
 							</div>
 						</div>
+						<div class="col-sm-12"><p class="text-justify lead">{{$delivery->short}}</p></div>
+						
 						<div class="col-sm-12">
 							<p class="lead text-justify"><strong>{{$delivery->body}}</strong></p>
 						</div>
@@ -93,7 +108,7 @@
 
 				<div class="panel panel-default">
 				  	<div class="panel-heading">
-				    	<h3 class="panel-title">Recomentaciones</h3>
+				    	<h3 class="panel-title">Recomendaciones</h3>
 				  	</div>
 				  	<div class="panel-body">
 					
@@ -138,6 +153,10 @@
 						</form>	
 					</div>
 				</div>
+				@else
+					<div class="well">
+						<p>Para dejar un comentario necesitas estar ingresado.</p>
+					</div>
 
 				@endif
 				
