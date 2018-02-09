@@ -24,10 +24,9 @@ Route::get('/c/{id}', ['as' => 'guest.category.show', 'uses' => 'guest\GuestCont
 
 // User
 Route::prefix('user')->name('user.')->middleware('auth')->group(function () { 
-	Route::get('d' , [
-		'as' 	=> 'delivery.mydelivery', 
-		'uses' 	=> 'user\DeliveryController@MyDelivery'
-	]);
+	Route::get('d' , ['as' 	=> 'delivery.mydelivery', 'uses' => 'user\DeliveryController@MyDelivery']);
+	Route::get('o' , ['as' 	=> 'order.index', 'uses' => 'user\OrderController@index']);
+	Route::get('o/{id}/create/' , ['as' => 'order.create', 'uses' => 'user\OrderController@orderCreate']);
 
 	Route::resource('delivery' , 'user\DeliveryController');
 	Route::resource('comment' , 'user\CommentController');

@@ -55,7 +55,11 @@
 						<div class="col-sm-12">
 							<p class="lead text-justify"><strong>{{$delivery->body}}</strong></p>
 						</div>
-					</div>	
+						<div class="col-sm-12">
+							<a class="btn btn-lg btn-block btn-success" href="{{ route('user.order.create', $delivery->id) }}"> Hacer un pedido. </a>
+						</div>	
+					</div>
+
 				</div>
 
 				@if (count($promotions) > 0)

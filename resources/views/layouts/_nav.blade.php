@@ -43,11 +43,15 @@
                             <li><a href="{{ route('login') }}">Ingresar</a></li>
                             <li><a href="{{ route('register') }}">Registrar</a></li>
                         @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('user.order.index') }}">Pedidos</a>
+                            </li>
                             @if(Auth::user()->type == 'ADMIN')
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('admin.delivery.index') }}">Administración</a>
                                 </li>
                             @endif
+                            
                             <li class="dropdown">
                                 
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
